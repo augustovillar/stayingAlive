@@ -149,10 +149,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.label_4)
 
-        self.lineEdit_2 = QLineEdit(self.frame_4)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.jogador1 = QLineEdit(self.frame_4)
+        self.jogador1.setObjectName(u"jogador1")
 
-        self.horizontalLayout.addWidget(self.lineEdit_2)
+        self.horizontalLayout.addWidget(self.jogador1)
 
 
         self.verticalLayout_6.addWidget(self.frame_4)
@@ -168,10 +168,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.label_5)
 
-        self.lineEdit = QLineEdit(self.frame_5)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.jogador2 = QLineEdit(self.frame_5)
+        self.jogador2.setObjectName(u"jogador2")
 
-        self.horizontalLayout_2.addWidget(self.lineEdit)
+        self.horizontalLayout_2.addWidget(self.jogador2)
 
 
         self.verticalLayout_6.addWidget(self.frame_5)
@@ -392,7 +392,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

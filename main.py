@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import *
 from interfaceJogo import Ui_MainWindow
 import sys
+from database import Data_base
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -41,6 +42,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         #historico
         self.voltarHistorico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+
+        ########################################################################################
+
+    def cadastrarUsuarios(self):
+        db = Data_base()
+
+        db.connect()
+        db.criar_tabela_Usuario()
+
+        if self.jogador1.text()!="" or self.jogador1.text()!="":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.critical)
+            msg.setText("Não foi adicionado os nomes corretamentes!")
+            msg.exec()
+            return
+        
+        jogador1 = db.verifica_usuario(self.jogador1.text())
+
+        if len(jogador1)==0:
+            db.cadastrar_usuario(self.jogador1.text())
+
+        jogador2 = db.verifica_usuario(self.jogador2.text())
+
+        if len(jogador2)==0:
+            db.cadastrar_usuario(self.jogador2.text())
+
 
 
         
