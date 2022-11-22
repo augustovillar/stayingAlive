@@ -18,73 +18,99 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>9</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageModo1">
-       <widget class="QWidget" name="">
+       <widget class="QFrame" name="frame_14">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>301</width>
-          <height>231</height>
+          <x>30</x>
+          <y>3</y>
+          <width>331</width>
+          <height>381</height>
          </rect>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Staying Alive&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Staying Alive&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
+          <widget class="QPushButton" name="doisJogadores">
+           <property name="text">
+            <string>2 Jogadores</string>
            </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="tutorial">
+           <property name="text">
+            <string>Tutorial</string>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
-             <widget class="QPushButton" name="doisJogadores">
-              <property name="text">
-               <string>2 Jogadores</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="tutorial">
-              <property name="text">
-               <string>Tutorial</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string>Outros</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="historico">
-              <property name="text">
-               <string>Histórico</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="historico">
+           <property name="text">
+            <string>Histórico</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="voltarHome">
+           <property name="text">
+            <string>Outros</string>
+           </property>
           </widget>
          </item>
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="page">
+      <widget class="QWidget" name="pagHistorico">
        <property name="enabled">
         <bool>true</bool>
        </property>
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>321</width>
+          <height>341</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Histórico&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="voltarHistorico">
+           <property name="text">
+            <string>Voltar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="pagHome">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -105,21 +131,21 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="Entrar">
+            <widget class="QPushButton" name="jogoModo1">
              <property name="text">
               <string>Modo 1</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="jogoModo2">
              <property name="text">
               <string>Modo 2</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="sair">
              <property name="text">
               <string>Sair</string>
              </property>
@@ -130,6 +156,7 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="page_2"/>
       <widget class="QWidget" name="cadastroDoisJogares">
        <widget class="QFrame" name="frame_3">
         <property name="geometry">
@@ -208,14 +235,14 @@
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QPushButton" name="cadastrar">
+             <widget class="QPushButton" name="cadastrarDoisJogadores">
               <property name="text">
                <string>Cadastrar</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="cancelar">
+             <widget class="QPushButton" name="cancelarCadModo1">
               <property name="text">
                <string>Cancelar</string>
               </property>
@@ -480,7 +507,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="voltar">
+            <widget class="QPushButton" name="voltarModo1">
              <property name="text">
               <string>Voltar</string>
              </property>
