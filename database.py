@@ -12,7 +12,6 @@ class Data_base():
         except:
             print("Não conseguiu abrir o banco de dados.")
 
-
     def close_connection(self):
         try:
             self.connection.close()
@@ -20,57 +19,19 @@ class Data_base():
         except:
             print("Não conseguiu fechar o banco de dados.")
 
-
-    def criar_tabela_Usuario(self):
-        cursor = self.connection.cursor()
-
-        cursor.execute("""
-
-                        CREATE TABLE IF  NOT EXISTS Usuarios(
-                            ID_USUARIO INTEGER NOT NULL,
-                            NOME TEXT UNIQUE,
-
-                            PRIMARY KEY ("ID_USUARIO", AUTOINCREMENT)
-                        )
-                        """)
-
     def cadastrar_usuario(self, nome):
-        campos = ['nome']  
-        qtd = ('?')
 
         try:
             cursor = self.connection.cursor()
             cursor.execute(f"""
-                            INSERT OR IGNORE INTO Usuarios {campos} VALUES {qtd}
-                          """, nome)
+                            INSERT OR IGNORE INTO Usuarios values(NULL, '{nome}')
+                          """)
             self.connection.commit()
 
             return "OK"
         except Exception as e:
             print(e)
             return "DEU ERRO!"
-    
-    def criar_tabela_Jogo(self):
-        cursor = self.connection.cursor()
-
-        cursor.execute("""
-
-                        CREATE TABLE IF  NOT EXISTS Jogos(
-                            ID_JOGO INTEGER NOT NULL,
-                            ID_JOGADOR1 TEXT,
-                            ID_JOGADOR2 TEXT,
-
-                            PONTOS1 INTEREGER,
-                            PONTOS2 INTEREGER,
-
-                            PRIMARY KEY ("ID_JOGO", AUTOINCREMENT),
-                            
-                            FOREIGN KEY (ID_JOGADOR1) REFERENCES Usuarios(ID_USUARIO),
-                            FOREIGN KEY (ID_JOGADOR2) REFERENCES Usuarios(ID_USUARIO),
-                        )
-                        """)
-
-
 
     def criarJogada(self, parametros):
         cursor = self.connection.cursor()
@@ -90,8 +51,6 @@ class Data_base():
         except Exception as e:
             print(e)
             return "DEU ERRO!"
-
-
 
     def procura_historico_jogador(self, nome):
         cursor = self.connection.cursor()
@@ -133,3 +92,38 @@ class Data_base():
     #     except Exception as e:
     #         print(e)
     #         return "DEU ERRO!"
+
+
+
+
+    # def criar_tabela_Jogo(self):
+    #     cursor = self.connection.cursor()
+
+    #     cursor.execute("""
+
+    #                     CREATE TABLE "Jogos" (
+    #                     "ID_JOGO"	INTEGER NOT NULL,
+    #                     "ID_JOGADOR1"	INTEGER NOT NULL,
+    #                     "ID_JOGADOR2"	INTEGER NOT NULL,
+    #                     "PONTOS1"	INTEGER,
+    #                     "PONTOS2"	INTEGER,
+    #                     PRIMARY KEY("ID_JOGO" AUTOINCREMENT),
+    #                     FOREIGN KEY("ID_JOGADOR2") REFERENCES "Usuarios"("ID_USUARIO"),
+    #                     FOREIGN KEY("ID_JOGADOR1") REFERENCES "Usuarios"("ID_USUARIO")
+    #                 );
+    #                     """)
+
+
+    # def criar_tabela_Usuario(self):
+    #     cursor = self.connection.cursor()
+
+    #     cursor.execute("""
+
+    #                     CREATE TABLE IF NOT EXISTS "Usuarios" (
+    #                     "ID_USUARIO"	INTEGER NOT NULL,
+    #                     "NOME"	TEXT NOT NULL UNIQUE,
+    #                     PRIMARY KEY("ID_USUARIO" AUTOINCREMENT)
+    #                     );
+    #                     """)
+
+    #     self.connection.commit()

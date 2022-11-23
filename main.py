@@ -2,9 +2,15 @@ from PySide6.QtWidgets import *
 from interfaceJogo import Ui_MainWindow
 import sys
 from database import Data_base
+import serial
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
+
+    id_jogador1Atual = ""
+    id_jogador2Atual = ""
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
@@ -28,7 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.voltarHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pagHome))
 
         #cadastro
-        self.cadastrarDoisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
+        #self.cadastrarDoisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
         self.cancelarCadModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
 
         #configurando player 1
@@ -45,35 +51,73 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         ########################################################################################
 
+        self.cadastrarDoisJogadores.clicked.connect(self.cadastrarUsuarios)
+
+
     def cadastrarUsuarios(self):
         db = Data_base()
 
         db.connect()
-        db.criar_tabela_Usuario()
 
-        if self.jogador1.text()!="" or self.jogador1.text()!="":
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.critical)
-            msg.setText("Não foi adicionado os nomes corretamentes!")
-            msg.exec()
+        jogador1Nome = self.jogador1.text().strip()
+        jogador2Nome = self.jogador2.text().strip()
+
+        if jogador1Nome=="" or jogador2Nome=="":
+            dialog = QMessageBox(parent=self, text="Não foi adicionado os nomes corretamentes!")
+            dialog.setWindowTitle("Erro no cadastro")
+            dialog.exec()
+            self.Pages.setCurrentWidget(self.configuracao1)
             return
+
+        #verifica se existe para assim cadastrar o usuário
+        if len(db.verifica_usuario(jogador1Nome))==0:
+            jogador1OK = db.cadastrar_usuario(jogador1Nome)
+        else:
+            jogador1OK = "JA"
         
-        jogador1 = db.verifica_usuario(self.jogador1.text())
-
-        if len(jogador1)==0:
-            db.cadastrar_usuario(self.jogador1.text())
-
-        jogador2 = db.verifica_usuario(self.jogador2.text())
-
-        if len(jogador2)==0:
-            db.cadastrar_usuario(self.jogador2.text())
-
-
-
+        #retorna OK quando cadastro com sucesso
+        if jogador1OK=="OK":
+            print(f"O Jogador1, {jogador1Nome}, foi cadastrado com sucesso.")
+        elif jogador1OK=="JA":
+            print(f"O Jogador1, {jogador1Nome}, já está cadastrado.")
+        else:
+            print(f"O Jogador1, {jogador1Nome}, não foi cadastrado com sucesso.")
+            print(jogador1OK)
         
+        if len(db.verifica_usuario(jogador2Nome))==0:
+            jogador2OK = db.cadastrar_usuario(jogador2Nome)
+        else:
+            jogador2OK = "JA"
 
-        
-        
+        #retorna OK quando cadastro com sucesso
+        if jogador2OK=="OK":
+            print(f"O Jogador2, {jogador2Nome}, foi cadastrado com sucesso.")
+        elif jogador2OK=="JA":
+            print(f"O Jogador2, {jogador2Nome}, já está cadastrado.")
+        else:
+            print(f"O Jogador2, {jogador2Nome}, não foi cadastrado com sucesso.")
+
+        if ((jogador1OK=="OK" or jogador1OK=="JA") and (jogador2OK=="OK" or jogador2OK=="JA")):
+            dialog = QMessageBox(parent=self, text='Usuários cadastrados com sucesso!')
+        else:
+            dialog = QMessageBox(parent=self, text='Usuários cadastrados com sucesso!')
+
+        dialog.setWindowTitle("Cadastro")
+        dialog.exec()
+
+        self.id_jogador1Atual = db.verifica_usuario(jogador1Nome)[0][0]
+        self.id_jogador2Atual = db.verifica_usuario(jogador2Nome)[0][0]
+
+        self.jogador1.setText('')
+        self.jogador2.setText('')
+
+        self.Pages.setCurrentWidget(self.configuracao1)
+
+    def posicionamento_pessoa1(self):
+        #    '120,200#'
+        return
+
+
 
 
 if __name__=="__main__":
