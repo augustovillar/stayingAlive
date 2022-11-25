@@ -35,7 +35,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         #cadastro
         #self.cadastrarDoisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
-        self.cancelarCadModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+        self.cancelarCadModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.iniciar_config))
+
+        #Aguardando comando iniciar
+        self.iniciar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
 
         #configurando player 1
         self.cancelar_conf1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
@@ -66,7 +69,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             dialog = QMessageBox(parent=self, text="Não foi adicionado os nomes corretamentes!")
             dialog.setWindowTitle("Erro no cadastro")
             dialog.exec()
-            self.Pages.setCurrentWidget(self.configuracao1)
+            self.Pages.setCurrentWidget(self.cadastroDoisJogares)
             return
 
         #verifica se existe para assim cadastrar o usuário
@@ -111,7 +114,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.jogador1.setText('')
         self.jogador2.setText('')
 
-        self.Pages.setCurrentWidget(self.configuracao1)
+        self.Pages.setCurrentWidget(self.iniciar_config)
 
     def posicionamento_pessoa1(self):
         #    '120,200#'

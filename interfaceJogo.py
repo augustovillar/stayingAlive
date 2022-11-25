@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(405, 446)
+        MainWindow.resize(421, 460)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
@@ -121,9 +121,35 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.frame_2)
 
         self.Pages.addWidget(self.pagHome)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.Pages.addWidget(self.page_2)
+        self.iniciar_config = QWidget()
+        self.iniciar_config.setObjectName(u"iniciar_config")
+        self.frame_15 = QFrame(self.iniciar_config)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setGeometry(QRect(0, 0, 321, 231))
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.label_19 = QLabel(self.frame_15)
+        self.label_19.setObjectName(u"label_19")
+
+        self.verticalLayout_16.addWidget(self.label_19)
+
+        self.verticalSpacer_7 = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Maximum)
+
+        self.verticalLayout_16.addItem(self.verticalSpacer_7)
+
+        self.label_20 = QLabel(self.frame_15)
+        self.label_20.setObjectName(u"label_20")
+
+        self.verticalLayout_16.addWidget(self.label_20)
+
+        self.iniciar = QPushButton(self.frame_15)
+        self.iniciar.setObjectName(u"iniciar")
+
+        self.verticalLayout_16.addWidget(self.iniciar)
+
+        self.Pages.addWidget(self.iniciar_config)
         self.cadastroDoisJogares = QWidget()
         self.cadastroDoisJogares.setObjectName(u"cadastroDoisJogares")
         self.frame_3 = QFrame(self.cadastroDoisJogares)
@@ -384,7 +410,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 405, 21))
+        self.menubar.setGeometry(QRect(0, 0, 421, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -392,7 +418,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(4)
+        self.Pages.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -411,13 +437,16 @@ class Ui_MainWindow(object):
         self.jogoModo1.setText(QCoreApplication.translate("MainWindow", u"Modo 1", None))
         self.jogoModo2.setText(QCoreApplication.translate("MainWindow", u"Modo 2", None))
         self.sair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configura\u00e7\u00e3o do ambiente</span></p></body></html>", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Aperte o bot\u00e3o&quot; iniciar&quot; para configurar </p><p align=\"center\">o ambiente e iniciar o jogo</p></body></html>", None))
+        self.iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Cadastro dos Jogares</p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Jogador 1:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Jogador 2:", None))
         self.cadastrarDoisJogadores.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.cancelarCadModo1.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configurando o ambiente...</span></p></body></html>", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Jogador 1: Fique na frente na frente </p><p align=\"center\">do sensor ultrassonico.</p></body></html>", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Jogador 1: Fique na frente</p><p align=\"center\">do sensor ultrassonico.</p></body></html>", None))
         self.cancelar_conf1.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configurando o ambiente...</span></p></body></html>", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Jogador 1: Fique na frente na frente </p><p align=\"center\">do sensor ultrassonico.</p></body></html>", None))
