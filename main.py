@@ -116,6 +116,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Pages.setCurrentWidget(self.iniciar_config)
 
     def iniciar_uc(self):
+        
+        self.Pages.setCurrentWidget(self.configuracao1)
 
     def posicionamento_pessoa1(self):
         #    '120,200#'
