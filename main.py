@@ -3,7 +3,7 @@ from interfaceJogo import Ui_MainWindow
 import sys
 from database import Data_base
 import serial
-
+import time
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -15,6 +15,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
+        ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E')
         #appIncos = QIcon()
 
         ###############################
@@ -24,8 +25,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.jogoModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
         # self.jogoModo2.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo2))
         # self.sair.clicked encerra a execução
-
-
 
         #modo1
         self.doisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.cadastroDoisJogares))
@@ -38,7 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cancelarCadModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.iniciar_config))
 
         #Aguardando comando iniciar
-        self.iniciar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
+        self.iniciar.clicked.connect(self.iniciar_uc)
 
         #configurando player 1
         self.cancelar_conf1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
@@ -115,6 +114,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.jogador2.setText('')
 
         self.Pages.setCurrentWidget(self.iniciar_config)
+
+    def iniciar_uc(self):
 
     def posicionamento_pessoa1(self):
         #    '120,200#'
