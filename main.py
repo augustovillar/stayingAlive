@@ -11,6 +11,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     id_jogador1Atual = ""
     id_jogador2Atual = ""
 
+    ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
+
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
@@ -119,9 +122,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         self.Pages.setCurrentWidget(self.configuracao1)
 
-    def posicionamento_pessoa1(self):
+    def posicionamento_pessoa(self, numJogador):
         #    '120,200#'
-        return
+        timeout = 20
+        
+        #escreve o numero para o sensor ir pra posicao do primeiro jogador
+        self.ser.write((str(numJogador)).encode('ascii'))
+
+        timeStart = time.time()
+        timeNow = timeStart
+
+        while timeNow-timeStart >= timeout:
+
+            recebeDados = self.ser.read_until(expected='#')
+            angulo = int(recebeDados[-6:-8])
+            distancia = int(recebeDados[-2:-4])
+            
+            if distancia>=180 and distancia<=220:
+                print('Posicionamento do jogador '+str(numJogador)+'feito com sucesso!')
+                return 'OK'
+            timeNow = time.time()
+
+        print('Posicionamento do jogador'+str(numJogador)+' não foi feita com sucesso!')
+        return 'TIMEOUT'
+
+    def posicionamento_modo1(self):
 
 
 

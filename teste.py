@@ -10,9 +10,8 @@ def calculaDiferenca(img1, img2, img3):
     return imagem
 
 
-def liga(mensagem):
+def liga(mensagem='0', tempoDeEspera=2):
 
-    
     webcam = cv2.VideoCapture(0)
     ultima = cv2.cvtColor(webcam.read()[1], cv2.COLOR_RGB2GRAY)
     penultima = ultima
@@ -37,7 +36,7 @@ def liga(mensagem):
 
         timeafter = time.time()
 
-        if timeafter-timestart >= 2:
+        if timeafter-timestart >= tempoDeEspera:
             if soma>900000:
                 print("Enviou!")
                 ser.write((mensagem).encode("ascii"))
@@ -46,4 +45,4 @@ def liga(mensagem):
             webcam.release()
             break
 
-liga('1')
+#liga('1', tempoDeEspera)
