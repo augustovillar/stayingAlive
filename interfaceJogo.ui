@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>421</width>
-    <height>460</height>
+    <width>429</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageModo1">
        <widget class="QFrame" name="frame_14">
@@ -162,8 +162,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>321</width>
-          <height>231</height>
+          <width>401</width>
+          <height>251</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -524,6 +524,56 @@
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="erroConfiguracao">
+       <widget class="QFrame" name="frame_16">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>331</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item>
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Erro no posicionamento &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;dos jogadores!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Houve um erro no posicionamento dos jogadores. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Posicionamento irá ser reiniciado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
       <widget class="QWidget" name="instrucoesTutorial">
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <item>
@@ -633,7 +683,7 @@
             <item>
              <widget class="QPushButton" name="pausarJogo">
               <property name="text">
-               <string>Pausar</string>
+               <string>Pausar o Jogo</string>
               </property>
              </widget>
             </item>
@@ -659,7 +709,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>421</width>
+     <width>429</width>
      <height>21</height>
     </rect>
    </property>

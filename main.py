@@ -4,6 +4,7 @@ import sys
 from database import Data_base
 import serial
 import time
+from deteccaoMovimento import detectaMov
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -11,14 +12,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     id_jogador1Atual = ""
     id_jogador2Atual = ""
 
-    ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
-
+    ser = ''
 
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
-        ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E')
+        #self.ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
         #appIncos = QIcon()
 
         ###############################
@@ -54,10 +54,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #historico
         self.voltarHistorico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
 
+        
         ########################################################################################
-
+        #cadastra usuarios
         self.cadastrarDoisJogadores.clicked.connect(self.cadastrarUsuarios)
-
+        
+        #inicia posicionamento do modo 1
+        self.iniciar.clicked.connect(self.posicionamento_modo1)
 
     def cadastrarUsuarios(self):
         db = Data_base()
@@ -119,7 +122,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Pages.setCurrentWidget(self.iniciar_config)
 
     def iniciar_uc(self):
-        
         self.Pages.setCurrentWidget(self.configuracao1)
 
     def posicionamento_pessoa(self, numJogador):
@@ -148,7 +150,35 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def posicionamento_modo1(self):
 
+        self.Pages.setCurrentWidget(self.configuracao1)
+        status = self.posicionamento_pessoa(1)
+        
+        if status=="OK":
+            self.Pages.setCurrentWidget(self.sucesso1)
+            time.sleep(2)
+            self.Pages.setCurrentWidget(self.configuracao2)
+        else:
+            self.Pages.setCurrentWidget(self.erroConfiguracao)
+            print("Posicionamento do jogador 1 não foi concluído corretamente.")
+            return "ERRO1"
 
+        status = self.posicionamento_pessoa(2)
+        if status=="OK":
+            self.Pages.setCurrentWidget(self.sucesso2)
+            time.sleep(2)
+            self.Pages.setCurrentWidget(self.jogoAndamento)
+        else:
+            self.Pages.setCurrentWidget(self.erroConfiguracao)
+            print("Posicionamento do jogador 2 não foi concluído corretamente.")
+            return "ERRO2"
+
+        return "SUCESSO"
+
+    def jogo_modo1(self):
+
+        tocaMusica()
+
+        resposta = detectaMov()
 
 
 if __name__=="__main__":
