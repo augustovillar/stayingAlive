@@ -14,6 +14,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     id_jogador1Atual = ""
     id_jogador2Atual = ""
+    nomeJogador1Atual = ""
+    nomeJogador2Atual = ""
 
     ser = ''
 
@@ -118,11 +120,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.id_jogador1Atual = db.verifica_usuario(jogador1Nome)[0][0]
         self.id_jogador2Atual = db.verifica_usuario(jogador2Nome)[0][0]
+        self.nomeJogador1Atual = jogador1Nome
+        self.nomeJogador2Atual = jogador2Nome
 
         self.jogador1.setText('')
         self.jogador2.setText('')
 
         self.Pages.setCurrentWidget(self.iniciar_config)
+
+        db.close_connection()
 
     def iniciar_uc(self):
         self.Pages.setCurrentWidget(self.configuracao1)
@@ -282,11 +288,43 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             numeroRodadasAbaixando = 0
             paraMusica()
 
-    
-            
+        #contabiliza os pontos
 
+        
+        rodadas = [numeroRodadasAbaixandoTotais, numeroRodadasDancandoTotais, numeroRodadasParadoEmPeTotais]
+        self.escreveJogo(rodadas, jogador1Campeao)
 
+    def escreveJogo(self, rodadas, jogador1Campeao):
+
+        pontosEmComum = rodadas[0] + rodadas[1] + rodadas[2]
+
+        if jogador1Campeao:
+            pontosJogador1 = pontosEmComum + 10
+            pontosJogador2 = pontosEmComum
+        else:
+            pontosJogador1 = pontosEmComum
+            pontosJogador2 = pontosEmComum + 10
+
+        db = Data_base()
+
+        self.Pages.setCurrentWidget(self.ganhouJogador)
+
+        if jogador1Campeao:
+            self.jogadorGanhador.setText(f"O jogador 1, {self.nomeJogador1Atual}, ganhou o jogo!")
+            self.pontuacaoFim.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}
+                                        Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}
+                                        """)
+            db.criarJogada(self.id_jogador1Atual, self.id_jogador2Atual, self.id_jogador1Atual, pontosJogador1, pontosJogador2, rodadas[0], rodadas[1], rodadas[2])
             
+        else:
+            self.jogadorGanhador.setText(f"O jogador 2, {self.nomeJogador1Atual}, ganhou o jogo!")
+            self.pontuacaoFim.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}
+                                        Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}
+                                        """)
+
+            db.criarJogada(self.id_jogador1Atual, self.id_jogador2Atual, self.id_jogador2Atual, pontosJogador1, pontosJogador2, rodadas[0], rodadas[1], rodadas[2])
+
+        db.close_connection()
 
             
             

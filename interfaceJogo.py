@@ -428,6 +428,57 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.addWidget(self.frame_13)
 
         self.Pages.addWidget(self.jogoAndamento)
+        self.ganhouJogador1 = QWidget()
+        self.ganhouJogador1.setObjectName(u"ganhouJogador1")
+        self.frame_17 = QFrame(self.ganhouJogador1)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setGeometry(QRect(20, 10, 371, 381))
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_17)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.frame_18 = QFrame(self.frame_17)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setFrameShape(QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_18)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.jogadorGanhador = QLabel(self.frame_18)
+        self.jogadorGanhador.setObjectName(u"jogadorGanhador")
+
+        self.verticalLayout_19.addWidget(self.jogadorGanhador)
+
+        self.pontuacaoFim = QLabel(self.frame_18)
+        self.pontuacaoFim.setObjectName(u"pontuacaoFim")
+
+        self.verticalLayout_19.addWidget(self.pontuacaoFim)
+
+        self.verticalSpacer_9 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.verticalLayout_19.addItem(self.verticalSpacer_9)
+
+        self.telaDePreparo = QPushButton(self.frame_18)
+        self.telaDePreparo.setObjectName(u"telaDePreparo")
+
+        self.verticalLayout_19.addWidget(self.telaDePreparo)
+
+        self.telaDeCadastrar = QPushButton(self.frame_18)
+        self.telaDeCadastrar.setObjectName(u"telaDeCadastrar")
+
+        self.verticalLayout_19.addWidget(self.telaDeCadastrar)
+
+        self.voltarMenu_3 = QPushButton(self.frame_18)
+        self.voltarMenu_3.setObjectName(u"voltarMenu_3")
+
+        self.verticalLayout_19.addWidget(self.voltarMenu_3)
+
+
+        self.verticalLayout_18.addWidget(self.frame_18)
+
+        self.Pages.addWidget(self.ganhouJogador1)
+        self.ganhouJogador2 = QWidget()
+        self.ganhouJogador2.setObjectName(u"ganhouJogador2")
+        self.Pages.addWidget(self.ganhouJogador2)
 
         self.verticalLayout_5.addWidget(self.Pages)
 
@@ -442,7 +493,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(0)
+        self.Pages.setCurrentIndex(12)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -485,8 +536,13 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para iniciar o jogo, cada jogador deve se posicionar </p><p align=\"center\">conforme as instru\u00e7\u00f5es do dispositivo, sempre ficando </p><p align=\"center\">com cerca de 2 metros na dire\u00e7\u00e3o do sensor ultrass\u00f4nico.</p><p align=\"center\">Enquanto a m\u00fasica toca, o dispositivo ficar\u00e1 oscilando </p><p align=\"center\">entre os usu\u00e1rio verificando se eles est\u00e3o dan\u00e7ando. </p><p align=\"center\">Caso negativo, o usu\u00e1rio que n\u00e3o estiver dan\u00e7ando perder\u00e1, </p><p align=\"center\">fazendo com que o oponente ganhe 10 pontos.</p><p align=\"center\">Ap\u00f3s isso, a musica parar\u00e1 repedinamente </p><p align=\"center\">e o sensor ultrass\u00f4nico verificar\u00e1 se o jogador </p><p align=\"center\">est\u00e1 morto (abaixado) ou vivo (levantado).</p></body></html>", None))
         self.voltarModo1.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogo j\u00e1 come\u00e7ou!</span></p></body></html>", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Quando a m\u00fasica parar, voc\u00ea deve se </p><p align=\"center\">atentar ao buzzer: quando ele tocar, </p><p align=\"center\">o dispositivo far\u00e1 a verifica\u00e7\u00e3o de se </p><p align=\"center\">os jogadores estar\u00e3o mortos ou vivos.</p></body></html>", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Dance enquanto a musica tocar,</p><p align=\"center\">fique parado quando a musica parar.</p><p align=\"center\">Quando o buzzer tocar, abaixe se o </p><p align=\"center\">mestre estiver olhando para voc\u00ea.</p></body></html>", None))
         self.pausarJogo.setText(QCoreApplication.translate("MainWindow", u"Pausar o Jogo", None))
         self.voltarMenu.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.jogadorGanhador.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogador 1 ganhou!</span></p></body></html>", None))
+        self.pontuacaoFim.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador 1, :</p><p align=\"center\">Pontua\u00e7\u00e3o do jogador 2, :</p></body></html>", None))
+        self.telaDePreparo.setText(QCoreApplication.translate("MainWindow", u"Recome\u00e7ar com os mesmos participantes", None))
+        self.telaDeCadastrar.setText(QCoreApplication.translate("MainWindow", u"Recome\u00e7ar com novos participantes", None))
+        self.voltarMenu_3.setText(QCoreApplication.translate("MainWindow", u"Voltar ao Menu", None))
     # retranslateUi
 

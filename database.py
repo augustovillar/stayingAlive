@@ -33,18 +33,14 @@ class Data_base():
             print(e)
             return "DEU ERRO!"
 
-    def criarJogada(self, parametros):
+    def criarJogada(self, id_1, id_2, id_ganhador, pontos1, pontos2, nAbaixando, nDancando, nParadas):
         cursor = self.connection.cursor()
-
-
-        campos = ['ID_JOGADOR1', 'ID_JOGADOR2', 'PONTOS1', 'PONTOS2']  
-        qtd = ('?, ?, ?, ?')    
 
         try:
             cursor = self.connection.cursor()
             cursor.execute(f"""
-                            INSERT INTO Jogos {campos} VALUES {qtd}
-                          """, parametros)
+                            INSERT OR IGNORE INTO Jogos values(NULL, {id_1}, {id_2}, {id_ganhador}, {pontos1}, {pontos2}, {nAbaixando}, {nDancando}, {nParadas})
+                          """)
             self.connection.commit()
 
             return "OK"

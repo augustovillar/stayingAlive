@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>0</number>
+       <number>12</number>
       </property>
       <widget class="QWidget" name="pageModo1">
        <widget class="QFrame" name="frame_14">
@@ -660,7 +660,7 @@
             <item>
              <widget class="QLabel" name="label_17">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Quando a música parar, você deve se &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;atentar ao buzzer: quando ele tocar, &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;o dispositivo fará a verificação de se &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;os jogadores estarão mortos ou vivos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Dance enquanto a musica tocar,&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fique parado quando a musica parar.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Quando o buzzer tocar, abaixe se o &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;mestre estiver olhando para você.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -691,6 +691,89 @@
              <widget class="QPushButton" name="voltarMenu">
               <property name="text">
                <string>Cancelar</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="ganhouJogador">
+       <widget class="QFrame" name="frame_17">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>371</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_18">
+         <item>
+          <widget class="QFrame" name="frame_18">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <item>
+             <widget class="QLabel" name="jogadorGanhador">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;O Jogador 1 ganhou!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="pontuacaoFim">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pontuação do jogador 1, :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Pontuação do jogador 2, :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Minimum</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="telaDePreparo">
+              <property name="text">
+               <string>Recomeçar com os mesmos participantes</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="telaDeCadastrar">
+              <property name="text">
+               <string>Recomeçar com novos participantes</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="voltarMenu_3">
+              <property name="text">
+               <string>Voltar ao Menu</string>
               </property>
              </widget>
             </item>
