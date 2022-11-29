@@ -10,14 +10,14 @@ def calculaDiferenca(img1, img2, img3):
     return imagem
 
 
-def detectaMov(mensagem='0', tempoDeEspera=2):
+def detectaMov(nameCOM, mensagem='0', tempoDeEspera=2):
 
     webcam = cv2.VideoCapture(0)
     ultima = cv2.cvtColor(webcam.read()[1], cv2.COLOR_RGB2GRAY)
     penultima = ultima
     antepenultima = ultima
 
-    ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E')
+    ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E')
     #guarda tmepo para o cronometro
     timestart = time.time()
     soma = 0 

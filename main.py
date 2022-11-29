@@ -9,6 +9,8 @@ from musica import tocaMusica, paraMusica
 import random
 from morto_vivo import posicionamento_mortoVivo
 
+nameCOM = 'COM8'
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -23,7 +25,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
-        self.ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
+        self.ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
+
         #appIncos = QIcon()
 
         ###############################
@@ -44,9 +47,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #self.cadastrarDoisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
         self.cancelarCadModo1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.iniciar_config))
 
-        #Aguardando comando iniciar
-        self.iniciar.clicked.connect(self.iniciar_uc)
-
         #configurando player 1
         self.cancelar_conf1.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
         
@@ -59,7 +59,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #historico
         self.voltarHistorico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
 
-        
+        #ganhador
+        self.telaDeCadastrar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.cadastroDoisJogares))
+        self.telaDePreparo.clicked.connect(lambda: self.Pages.setCurrentWidget(self.iniciar_config))
+        self.voltarMenu_3.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+        self.voltarMenu_2.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+        self.voltarMenu.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+        self.comecarJogo.clicked.connect(lambda: self.Pages.setCurrentWidget(self.jogoAndamento))
+        self.comecarJogo.clicked.connect(self.jogo_modo1)
+
         ########################################################################################
         #cadastra usuarios
         self.cadastrarDoisJogadores.clicked.connect(self.cadastrarUsuarios)
@@ -130,13 +138,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         db.close_connection()
 
-    def iniciar_uc(self):
-        self.Pages.setCurrentWidget(self.configuracao1)
-
     def posicionamento_pessoa(self, numJogador):
-        #    '120,200#'
+
         timeout = 20
-        
+
+        self.ser.write(('l').encode('ascii'))
         #escreve o numero para o sensor ir pra posicao do primeiro jogador
         self.ser.write((str(numJogador)).encode('ascii'))
 
@@ -144,49 +150,47 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         timeNow = timeStart
         jogadorPosicionado = 0
 
-        while timeNow-timeStart >= timeout:
+        while timeNow-timeStart <= timeout:
+            recebeDados = self.ser.read_until(expected=('#').encode('ascii')).decode('ascii')
 
-            recebeDados = self.ser.read_until(expected='#')
-            angulo = int(recebeDados[-6:-8])
-            distancia = int(recebeDados[-2:-4])
+            distancia = int(recebeDados[4:7])
             
-            if distancia>=180 and distancia<=220:
+            if distancia<=220:
                 jogadorPosicionado += 1
 
             if jogadorPosicionado>=3:
-                print('Posicionamento do jogador '+str(numJogador)+'feito com sucesso!')
+                print('Posicionamento do jogador '+str(numJogador)+' feito com sucesso!')
                 return 'OK'
 
             timeNow = time.time()
 
-        print('Posicionamento do jogador'+str(numJogador)+' não foi feita com sucesso!')
+        print('Posicionamento do jogador '+str(numJogador)+' não foi feita com sucesso!')
+
+        self.ser.write(('d').encode('ascii'))
+
         return 'TIMEOUT'
 
     def posicionamento_modo1(self):
 
-        self.Pages.setCurrentWidget(self.configuracao1)
+        self.ser.write(('d').encode('ascii'))
 
-        self.ser.write((str('d')).encode('ascii'))
         status = self.posicionamento_pessoa(1)
-        
-        if status=="OK":
-            self.Pages.setCurrentWidget(self.sucesso1)
-            time.sleep(2)
-            self.Pages.setCurrentWidget(self.configuracao2)
-        else:
+
+        if status!="OK":
             self.Pages.setCurrentWidget(self.erroConfiguracao)
             print("Posicionamento do jogador 1 não foi concluído corretamente.")
             return "ERRO1"
 
         status = self.posicionamento_pessoa(2)
-        if status=="OK":
-            self.Pages.setCurrentWidget(self.sucesso2)
-            time.sleep(2)
-            self.Pages.setCurrentWidget(self.jogoAndamento)
-        else:
+
+        if status!="OK":
             self.Pages.setCurrentWidget(self.erroConfiguracao)
             print("Posicionamento do jogador 2 não foi concluído corretamente.")
             return "ERRO2"
+
+        self.Pages.setCurrentWidget(self.jogoComecar)
+
+        self.ser.write(('d').encode('ascii'))
 
         return "SUCESSO"
 
@@ -204,13 +208,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         while continuaJogo:
             #numero de rodadas da danca
             maxRodadasDancando = 4 #random.randint(1,4)
-            tocaMusica("./musicas/stayingalive.mp3")
+            tocaMusica("stayingalive.mp3")
             while numeroRodadasDancando <= maxRodadasDancando and continuaJogo:
                 for i in range(1, 3):
 
                     self.ser.write((str(i)).encode('ascii'))
 
-                    resposta = detectaMov(mensagem='d', tempoDeEspera=3)
+                    resposta = detectaMov(nameCOM, mensagem='d', tempoDeEspera=3)
 
                     if resposta == 'NOK':
                         if i == 1:
@@ -232,7 +236,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             maxRodadasParadoEmPe = 4 #random.randint(1,4)
             paraMusica()
-            tocaMusica("./musicas/xuxa_minha_rainha.mp3")
+            tocaMusica("xuxa_minha_rainha.mp3")
 
             while numeroRodadasParadoEmPe <= maxRodadasParadoEmPe and continuaJogo:
                 for i in range(1, 3):
@@ -296,7 +300,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def escreveJogo(self, rodadas, jogador1Campeao):
 
-        pontosEmComum = rodadas[0] + rodadas[1] + rodadas[2]
+        #testando
+        self.id_jogador1Atual  = 5
+        self.id_jogador2Atual  = 6
+        self.nomeJogador1Atual = 'augusto'
+        self.nomeJogador2Atual = 'emilly'
+
+        pontosEmComum = sum(rodadas)
 
         if jogador1Campeao:
             pontosJogador1 = pontosEmComum + 10
@@ -326,7 +336,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         db.close_connection()
 
-            
+        
             
 
 
