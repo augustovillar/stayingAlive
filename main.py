@@ -211,10 +211,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tocaMusica("stayingalive.mp3")
             while numeroRodadasDancando <= maxRodadasDancando and continuaJogo:
                 for i in range(1, 3):
-
+                    
                     self.ser.write((str(i)).encode('ascii'))
 
-                    resposta = detectaMov(nameCOM, mensagem='d', tempoDeEspera=3)
+                    resposta = detectaMov(self.ser, mensagem='d', tempoDeEspera=3)
 
                     if resposta == 'NOK':
                         if i == 1:
