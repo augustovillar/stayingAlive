@@ -40,12 +40,9 @@ def detectaMov(mensagem='0', tempoDeEspera=2):
 
             webcam.release()
 
-            if soma>900000:
-                ser.write((mensagem).encode("ascii"))
+            if soma>900000*tempoDeEspera/2:
                 print("Movimento detectado!")
                 return "OK"
             
+            ser.write((mensagem).encode("ascii"))
             return "NOK"
-            break
-
-#liga('1', tempoDeEspera)

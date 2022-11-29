@@ -5,6 +5,9 @@ from database import Data_base
 import serial
 import time
 from deteccaoMovimento import detectaMov
+from musica import tocaMusica, paraMusica
+import random
+from morto_vivo import posicionamento_mortoVivo
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -18,7 +21,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
-        #self.ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
+        self.ser = serial.Serial('COM5', baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
         #appIncos = QIcon()
 
         ###############################
@@ -133,6 +136,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         timeStart = time.time()
         timeNow = timeStart
+        jogadorPosicionado = 0
 
         while timeNow-timeStart >= timeout:
 
@@ -141,8 +145,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             distancia = int(recebeDados[-2:-4])
             
             if distancia>=180 and distancia<=220:
+                jogadorPosicionado += 1
+
+            if jogadorPosicionado>=3:
                 print('Posicionamento do jogador '+str(numJogador)+'feito com sucesso!')
                 return 'OK'
+
             timeNow = time.time()
 
         print('Posicionamento do jogador'+str(numJogador)+' não foi feita com sucesso!')
@@ -151,6 +159,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def posicionamento_modo1(self):
 
         self.Pages.setCurrentWidget(self.configuracao1)
+
+        self.ser.write((str('d')).encode('ascii'))
         status = self.posicionamento_pessoa(1)
         
         if status=="OK":
@@ -176,9 +186,111 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def jogo_modo1(self):
 
-        tocaMusica()
+        continuaJogo = True
+        numeroRodadasDancandoTotais = 0
+        numeroRodadasDancando = 0
+        numeroRodadasParadoEmPeTotais = 0
+        numeroRodadasParadoEmPe = 0
+        numeroRodadasAbaixandoTotais = 0
+        numeroRodadasAbaixando = 0
+        
 
-        resposta = detectaMov()
+        while continuaJogo:
+            #numero de rodadas da danca
+            maxRodadasDancando = 4 #random.randint(1,4)
+            tocaMusica("./musicas/stayingalive.mp3")
+            while numeroRodadasDancando <= maxRodadasDancando and continuaJogo:
+                for i in range(1, 3):
+
+                    self.ser.write((str(i)).encode('ascii'))
+
+                    resposta = detectaMov(mensagem='d', tempoDeEspera=3)
+
+                    if resposta == 'NOK':
+                        if i == 1:
+                            jogador1Campeao = False
+                        else:
+                            jogador1Campeao = True
+
+                        continuaJogo = False
+
+                        break
+                    
+                numeroRodadasDancando += 1
+
+            #guarda info para historico
+            numeroRodadasDancandoTotais += numeroRodadasDancando
+            
+            #zera para proxima
+            numeroRodadasDancando = 0
+
+            maxRodadasParadoEmPe = 4 #random.randint(1,4)
+            paraMusica()
+            tocaMusica("./musicas/xuxa_minha_rainha.mp3")
+
+            while numeroRodadasParadoEmPe <= maxRodadasParadoEmPe and continuaJogo:
+                for i in range(1, 3):
+
+                    self.ser.write((str(i)).encode('ascii'))
+
+                    resposta = detectaMov(mensagem='d', tempoDeEspera=3)
+                    estado = posicionamento_mortoVivo(i, self.ser)
+
+                    if resposta == 'OK' and estado == "morto":
+                        if i == 1:
+                            jogador1Campeao = False
+                        else:
+                            jogador1Campeao = True
+
+                        continuaJogo = False
+
+                        break
+                    
+                numeroRodadasParadoEmPe += 1
+
+             #guarda info para historico
+            numeroRodadasParadoEmPeTotais += numeroRodadasParadoEmPe
+            
+            #zera para proxima
+            numeroRodadasParadoEmPe = 0
+            
+            paraMusica()
+            tocaMusica('no_ceu_tem_pao.mp3')
+            maxRodadasAbaixando = 4 #random.randint(1,4) 
+            while numeroRodadasAbaixando <= maxRodadasAbaixando and continuaJogo:
+                for i in range(1, 3):                     
+
+                    self.ser.write((str(i)).encode('ascii'))
+                    estado = posicionamento_mortoVivo(i, self.ser)
+
+                    if estado == 'vivo':
+                        if i == 1:
+                            jogador1Campeao = False
+                        else:
+                            jogador1Campeao = True
+
+                        continuaJogo = False
+
+                        break
+                    
+                numeroRodadasAbaixando += 1
+
+            #soma com o total
+            numeroRodadasAbaixandoTotais += numeroRodadasAbaixando
+
+            #soma de rodadas abaixando
+            numeroRodadasAbaixando = 0
+            paraMusica()
+
+    
+            
+
+
+            
+
+            
+            
+
 
 
 if __name__=="__main__":

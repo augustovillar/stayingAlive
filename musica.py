@@ -1,16 +1,13 @@
-import pygame
+import multiprocessing
+from playsound import playsound
 
-def tocaMusica(nome):
-    pygame.mixer.init()
-    pygame.init()
-    pygame.mixer.music.load(nome)
-    pygame.mixer.music.play()
-    pygame.event.wait()
+p = ''
 
-def pauseMusica():
-    pygame.mixer.music.pause()
+def tocaMusica(musicaNome):
+    global p
+    p = multiprocessing.Process(target=playsound, args=(musicaNome,))
+    p.start()
 
-def unpauseMusica():
-    pygame.mixer.music.unpause()
-
-tocaMusica('audio_teste.mp3')
+def paraMusica():
+    global p
+    p.terminate()
