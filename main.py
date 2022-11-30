@@ -142,7 +142,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         timeout = 20
 
-        self.ser.write(('l').encode('ascii'))
+        self.ser.write(('l').encode('ascii')) #liga o vhdl
         #escreve o numero para o sensor ir pra posicao do primeiro jogador
         self.ser.write((str(numJogador)).encode('ascii'))
 
@@ -203,17 +203,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         numeroRodadasParadoEmPe = 0
         numeroRodadasAbaixandoTotais = 0
         numeroRodadasAbaixando = 0
+    
         
 
         while continuaJogo:
             #numero de rodadas da danca
-            maxRodadasDancando = 4 #random.randint(1,4)
-            tocaMusica("stayingalive.mp3")
-            while numeroRodadasDancando <= maxRodadasDancando and continuaJogo:
+            maxRodadasDancando = random.randint(1,3)
+            tocaMusica("Bee Gees - StayinAlive.mp3")
+            while numeroRodadasDancando < maxRodadasDancando and continuaJogo:
+                
                 for i in range(1, 3):
                     
                     self.ser.write((str(i)).encode('ascii'))
-
+                    if numeroRodadasDancando == 0 and i==1:
+                        time.sleep(1)
                     resposta = detectaMov(self.ser, mensagem='d', tempoDeEspera=3)
 
                     if resposta == 'NOK':
@@ -221,11 +224,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             jogador1Campeao = False
                         else:
                             jogador1Campeao = True
-
+                      
                         continuaJogo = False
-
                         break
-                    
+
+                    if (int(maxRodadasDancando/2) == 1) and i==1 and numeroRodadasDancando==maxRodadasDancando-1:
+                        break
                 numeroRodadasDancando += 1
 
             #guarda info para historico
@@ -234,16 +238,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             #zera para proxima
             numeroRodadasDancando = 0
 
-            maxRodadasParadoEmPe = 4 #random.randint(1,4)
+            maxRodadasParadoEmPe = random.randint(1,3)
             paraMusica()
-            tocaMusica("xuxa_minha_rainha.mp3")
 
-            while numeroRodadasParadoEmPe <= maxRodadasParadoEmPe and continuaJogo:
+            if continuaJogo:
+                tocaMusica("xuxa_minha_rainha.mp3")
+
+            while numeroRodadasParadoEmPe < maxRodadasParadoEmPe and continuaJogo:
                 for i in range(1, 3):
 
                     self.ser.write((str(i)).encode('ascii'))
-
-                    resposta = detectaMov(mensagem='d', tempoDeEspera=3)
+                    if numeroRodadasParadoEmPe == 0:
+                        time.sleep(1)
+                    resposta = detectaMov(self.ser, mensagem='d', tempoDeEspera=3)
                     estado = posicionamento_mortoVivo(i, self.ser)
 
                     if resposta == 'OK' and estado == "morto":
@@ -253,7 +260,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             jogador1Campeao = True
 
                         continuaJogo = False
+                        break
 
+                    if int(maxRodadasParadoEmPe/2) == 1 and i==1 and numeroRodadasParadoEmPe==maxRodadasParadoEmPe-1:
                         break
                     
                 numeroRodadasParadoEmPe += 1
@@ -263,14 +272,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             
             #zera para proxima
             numeroRodadasParadoEmPe = 0
-            
-            paraMusica()
-            tocaMusica('no_ceu_tem_pao.mp3')
+            if continuaJogo:
+                tocaMusica('no_ceu_tem_pao.mp3')
             maxRodadasAbaixando = 4 #random.randint(1,4) 
             while numeroRodadasAbaixando <= maxRodadasAbaixando and continuaJogo:
                 for i in range(1, 3):                     
 
                     self.ser.write((str(i)).encode('ascii'))
+                    if numeroRodadasAbaixando == 0:
+                        time.sleep(1)
                     estado = posicionamento_mortoVivo(i, self.ser)
 
                     if estado == 'vivo':
@@ -290,11 +300,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             #soma de rodadas abaixando
             numeroRodadasAbaixando = 0
-            paraMusica()
 
         #contabiliza os pontos
 
-        
+        print("acabou")
         rodadas = [numeroRodadasAbaixandoTotais, numeroRodadasDancandoTotais, numeroRodadasParadoEmPeTotais]
         self.escreveJogo(rodadas, jogador1Campeao)
 
