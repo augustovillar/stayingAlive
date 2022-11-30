@@ -1,8 +1,9 @@
 def posicionamento_mortoVivo(ser):
 
-    recebeDados = ser.read_until(expected='#')
+    recebeDados = self.ser.read_until(expected=('#').encode('ascii')).decode('ascii')
+
     
-    distancia = int(recebeDados[-2:-4])
+    distancia = int(recebeDados[4:7])
 
     if distancia <= 220:
         return "vivo"
