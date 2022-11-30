@@ -25,7 +25,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
-        self.ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=None)
+        self.ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=20)
 
         #appIncos = QIcon()
 
@@ -65,6 +65,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.voltarMenu_3.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
         self.voltarMenu_2.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
         self.voltarMenu.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
+        
+        # self.comecarJogo.clicked.connect(self.escreveJogo)
         self.comecarJogo.clicked.connect(lambda: self.Pages.setCurrentWidget(self.jogoAndamento))
         self.comecarJogo.clicked.connect(self.jogo_modo1)
 
@@ -141,8 +143,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def posicionamento_pessoa(self, numJogador):
 
         timeout = 20
-
-        self.ser.write(('l').encode('ascii')) #liga o vhdl
+        
+        self.ser.reset_input_buffer()
+        self.ser.reset_output_buffer()
         #escreve o numero para o sensor ir pra posicao do primeiro jogador
         self.ser.write((str(numJogador)).encode('ascii'))
 
@@ -152,7 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         while timeNow-timeStart <= timeout:
             recebeDados = self.ser.read_until(expected=('#').encode('ascii')).decode('ascii')
-
+            print(recebeDados)
             distancia = int(recebeDados[4:7])
             
             if distancia<=220:
@@ -166,13 +169,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         print('Posicionamento do jogador '+str(numJogador)+' não foi feita com sucesso!')
 
-        self.ser.write(('d').encode('ascii'))
+
 
         return 'TIMEOUT'
 
     def posicionamento_modo1(self):
-
-        self.ser.write(('d').encode('ascii'))
+        
+        self.ser.write(('L').encode('ascii')) #liga o vhdl
+        time.sleep(0.5)
 
         status = self.posicionamento_pessoa(1)
 
@@ -190,8 +194,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.Pages.setCurrentWidget(self.jogoComecar)
 
-        self.ser.write(('d').encode('ascii'))
-
         return "SUCESSO"
 
     def jogo_modo1(self):
@@ -203,21 +205,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         numeroRodadasParadoEmPe = 0
         numeroRodadasAbaixandoTotais = 0
         numeroRodadasAbaixando = 0
-    
-        
+
+        self.ser.write(('r').encode('ascii'))
+        time.sleep(0.5)
+        self.ser.write(('L').encode('ascii'))
+        time.sleep(0.5)
 
         while continuaJogo:
             #numero de rodadas da danca
-            maxRodadasDancando = random.randint(1,3)
+            maxRodadasDancando = random.randint(1, 2)
+            paraEmQualJogador  = random.randint(1, 2)
             tocaMusica("Bee Gees - StayinAlive.mp3")
+
             while numeroRodadasDancando < maxRodadasDancando and continuaJogo:
-                
                 for i in range(1, 3):
-                    
+            
                     self.ser.write((str(i)).encode('ascii'))
                     if numeroRodadasDancando == 0 and i==1:
                         time.sleep(1)
-                    resposta = detectaMov(self.ser, mensagem='d', tempoDeEspera=3)
+                    resposta = detectaMov(tempoDeEspera=3)
 
                     if resposta == 'NOK':
                         if i == 1:
@@ -226,23 +232,40 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             jogador1Campeao = True
                       
                         continuaJogo = False
+                        paraMusica()
                         break
 
-                    if (int(maxRodadasDancando/2) == 1) and i==1 and numeroRodadasDancando==maxRodadasDancando-1:
+                    #aleatoricamente escolhe em qual jogador parar
+                    if (paraEmQualJogador==i and maxRodadasDancando-1==numeroRodadasDancando):
+                        paraMusica()
                         break
+
+                    # if (int(maxRodadasDancando/2) == 1) and i==1 and numeroRodadasDancando==maxRodadasDancando-1:
+                    #     break
                 numeroRodadasDancando += 1
 
+            #desliga sensor
+            self.ser.write(('d').encode('ascii'))
+
             #guarda info para historico
-            numeroRodadasDancandoTotais += numeroRodadasDancando
+            numeroRodadasDancandoTotais += numeroRodadasDancando 
+
+            if not continuaJogo:
+                break
             
             #zera para proxima
             numeroRodadasDancando = 0
 
-            maxRodadasParadoEmPe = random.randint(1,3)
+            maxRodadasParadoEmPe = random.randint(1, 2)
+            paraEmQualJogador = random.randint(1, 2)
+            
             paraMusica()
 
             if continuaJogo:
                 tocaMusica("xuxa_minha_rainha.mp3")
+            
+            #liga sensor
+            self.ser.write(('L').encode('ascii'))
 
             while numeroRodadasParadoEmPe < maxRodadasParadoEmPe and continuaJogo:
                 for i in range(1, 3):
@@ -250,56 +273,69 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.ser.write((str(i)).encode('ascii'))
                     if numeroRodadasParadoEmPe == 0:
                         time.sleep(1)
-                    resposta = detectaMov(self.ser, mensagem='d', tempoDeEspera=3)
-                    estado = posicionamento_mortoVivo(i, self.ser)
+                    resposta = detectaMov(tempoDeEspera=3, parado=True)
+                    estado = posicionamento_mortoVivo(self.ser)
 
-                    if resposta == 'OK' and estado == "morto":
+                    if resposta == 'NOK' or estado == "morto":
                         if i == 1:
                             jogador1Campeao = False
                         else:
                             jogador1Campeao = True
 
                         continuaJogo = False
+
+                        break
+                
+                    #aleatoricamente escolhe em qual jogador parar
+                    if (paraEmQualJogador==i and maxRodadasParadoEmPe-1==numeroRodadasParadoEmPe):
                         break
 
-                    if int(maxRodadasParadoEmPe/2) == 1 and i==1 and numeroRodadasParadoEmPe==maxRodadasParadoEmPe-1:
-                        break
+                    # if int(maxRodadasParadoEmPe/2) == 1 and i==1 and numeroRodadasParadoEmPe==maxRodadasParadoEmPe-1:
+                    #     break
                     
                 numeroRodadasParadoEmPe += 1
 
-             #guarda info para historico
+            #desliga sensor
+            self.ser.write(('d').encode('ascii'))
+
+            #guarda info para historico
             numeroRodadasParadoEmPeTotais += numeroRodadasParadoEmPe
+
+            #quebra o while
+            if not continuaJogo:
+                break
             
             #zera para proxima
             numeroRodadasParadoEmPe = 0
+            print("Parte morto!")
             if continuaJogo:
                 tocaMusica('no_ceu_tem_pao.mp3')
-            maxRodadasAbaixando = 4 #random.randint(1,4) 
-            while numeroRodadasAbaixando <= maxRodadasAbaixando and continuaJogo:
-                for i in range(1, 3):                     
+            
+                self.ser.write(('L').encode('ascii'))
 
-                    self.ser.write((str(i)).encode('ascii'))
-                    if numeroRodadasAbaixando == 0:
-                        time.sleep(1)
-                    estado = posicionamento_mortoVivo(i, self.ser)
+                #inicia jogo do morto
+                posicaoMorto = random.randint(1, 2)
+                self.ser.write((str(posicaoMorto)).encode('ascii'))
+                time.sleep(3)
+                estado = posicionamento_mortoVivo(self.ser)
 
-                    if estado == 'vivo':
-                        if i == 1:
-                            jogador1Campeao = False
-                        else:
-                            jogador1Campeao = True
+                if estado == 'vivo':
+                    if posicaoMorto == 1:
+                        jogador1Campeao = False
+                    else:
+                        jogador1Campeao = True
 
-                        continuaJogo = False
+                    continuaJogo = False
 
-                        break
-                    
-                numeroRodadasAbaixando += 1
+                time.sleep(5)
 
             #soma com o total
             numeroRodadasAbaixandoTotais += numeroRodadasAbaixando
 
             #soma de rodadas abaixando
             numeroRodadasAbaixando = 0
+            
+            
 
         #contabiliza os pontos
 
@@ -307,13 +343,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         rodadas = [numeroRodadasAbaixandoTotais, numeroRodadasDancandoTotais, numeroRodadasParadoEmPeTotais]
         self.escreveJogo(rodadas, jogador1Campeao)
 
-    def escreveJogo(self, rodadas, jogador1Campeao):
+    def escreveJogo(self, rodadas=[1, 2, 3], jogador1Campeao=True):
 
         #testando
-        self.id_jogador1Atual  = 5
-        self.id_jogador2Atual  = 6
-        self.nomeJogador1Atual = 'augusto'
-        self.nomeJogador2Atual = 'emilly'
+        # self.id_jogador1Atual  = 5
+        # self.id_jogador2Atual  = 6
+        # self.nomeJogador1Atual = 'augusto'
+        # self.nomeJogador2Atual = 'emilly'
 
         pontosEmComum = sum(rodadas)
 
@@ -326,29 +362,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         db = Data_base()
 
+        db.connect()
+
         self.Pages.setCurrentWidget(self.ganhouJogador)
 
         if jogador1Campeao:
             self.jogadorGanhador.setText(f"O jogador 1, {self.nomeJogador1Atual}, ganhou o jogo!")
-            self.pontuacaoFim.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}
-                                        Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}
+            self.pontuacaoFim1.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}.
+                                        """)
+            self.pontuacaoFim2.setText(f"""Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}.
                                         """)
             db.criarJogada(self.id_jogador1Atual, self.id_jogador2Atual, self.id_jogador1Atual, pontosJogador1, pontosJogador2, rodadas[0], rodadas[1], rodadas[2])
             
         else:
-            self.jogadorGanhador.setText(f"O jogador 2, {self.nomeJogador1Atual}, ganhou o jogo!")
-            self.pontuacaoFim.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}
-                                        Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}
+            self.jogadorGanhador.setText(f"O jogador 2, {self.nomeJogador2Atual}, ganhou o jogo!")
+            self.pontuacaoFim1.setText(f"""Pontuação do jogador 1, {self.nomeJogador1Atual}: {str(pontosJogador1)}.
                                         """)
+            self.pontuacaoFim2.setText(f"""Pontuação do jogador 2, {self.nomeJogador2Atual}: {str(pontosJogador2)}.
+                                        """)
+
 
             db.criarJogada(self.id_jogador1Atual, self.id_jogador2Atual, self.id_jogador2Atual, pontosJogador1, pontosJogador2, rodadas[0], rodadas[1], rodadas[2])
 
         db.close_connection()
 
-        
-            
-
-
+        return
 
 if __name__=="__main__":
     app = QApplication()

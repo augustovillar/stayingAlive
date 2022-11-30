@@ -1,5 +1,4 @@
 import cv2
-import serial
 import time
 
 def calculaDiferenca(img1, img2, img3):
@@ -10,9 +9,9 @@ def calculaDiferenca(img1, img2, img3):
     return imagem
 
 
-def detectaMov(ser, mensagem='0', tempoDeEspera=2):
+def detectaMov(tempoDeEspera=2, parado=False):
 
-    webcam = cv2.VideoCapture(0)
+    webcam = cv2.VideoCapture(1)
     ultima = cv2.cvtColor(webcam.read()[1], cv2.COLOR_RGB2GRAY)
     penultima = ultima
     antepenultima = ultima
@@ -32,16 +31,19 @@ def detectaMov(ser, mensagem='0', tempoDeEspera=2):
         if variavel:
             i+=1
             soma = soma + variavel
-
+        print(soma)
         timeafter = time.time()
 
         if timeafter-timestart >= tempoDeEspera:
 
             webcam.release()
 
-            if soma>900000*tempoDeEspera/2:
+            if soma>900000 and not parado:
                 print("Movimento detectado!")
                 return "OK"
+
+            elif soma<200000 and parado:
+                print("Pessoa parada!")
+                return "OK"
             
-            ser.write((mensagem).encode("ascii"))
             return "NOK"

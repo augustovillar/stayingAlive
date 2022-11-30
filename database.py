@@ -34,7 +34,6 @@ class Data_base():
             return "DEU ERRO!"
 
     def criarJogada(self, id_1, id_2, id_ganhador, pontos1, pontos2, nAbaixando, nDancando, nParadas):
-        cursor = self.connection.cursor()
 
         try:
             cursor = self.connection.cursor()

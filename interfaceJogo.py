@@ -491,10 +491,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_19.addWidget(self.jogadorGanhador)
 
-        self.pontuacaoFim = QLabel(self.frame_18)
-        self.pontuacaoFim.setObjectName(u"pontuacaoFim")
+        self.pontuacaoFim1 = QLabel(self.frame_18)
+        self.pontuacaoFim1.setObjectName(u"pontuacaoFim1")
 
-        self.verticalLayout_19.addWidget(self.pontuacaoFim)
+        self.verticalLayout_19.addWidget(self.pontuacaoFim1)
+
+        self.pontuacaoFim2 = QLabel(self.frame_18)
+        self.pontuacaoFim2.setObjectName(u"pontuacaoFim2")
+
+        self.verticalLayout_19.addWidget(self.pontuacaoFim2)
 
         self.verticalSpacer_9 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
 
@@ -533,7 +538,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(11)
+        self.Pages.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -584,7 +589,8 @@ class Ui_MainWindow(object):
         self.pausarJogo.setText(QCoreApplication.translate("MainWindow", u"Pausar o Jogo", None))
         self.voltarMenu.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.jogadorGanhador.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogador 1 ganhou!</span></p></body></html>", None))
-        self.pontuacaoFim.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador 1, :</p><p align=\"center\">Pontua\u00e7\u00e3o do jogador 2, :</p></body></html>", None))
+        self.pontuacaoFim1.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador 1, :</p></body></html>", None))
+        self.pontuacaoFim2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador2, :</p></body></html>", None))
         self.telaDePreparo.setText(QCoreApplication.translate("MainWindow", u"Recome\u00e7ar com os mesmos participantes", None))
         self.telaDeCadastrar.setText(QCoreApplication.translate("MainWindow", u"Recome\u00e7ar com novos participantes", None))
         self.voltarMenu_3.setText(QCoreApplication.translate("MainWindow", u"Voltar ao Menu", None))
