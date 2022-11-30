@@ -8,7 +8,7 @@ def posicionamento_mortoVivo(ser):
 
     distancia = int(recebeDados[4:7])
 
-    if distancia <= 220:
+    if distancia <= 100:
         return "vivo"
     else:
         return "morto"

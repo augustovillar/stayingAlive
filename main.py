@@ -9,7 +9,7 @@ from musica import tocaMusica, paraMusica
 import random
 from morto_vivo import posicionamento_mortoVivo
 
-nameCOM = 'COM8'
+nameCOM = 'COM5'
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -316,7 +316,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 #inicia jogo do morto
                 posicaoMorto = random.randint(1, 2)
                 self.ser.write((str(posicaoMorto)).encode('ascii'))
-                time.sleep(3)
+                time.sleep(1.5)
                 estado = posicionamento_mortoVivo(self.ser)
 
                 if estado == 'vivo':
