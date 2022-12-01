@@ -24,11 +24,11 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(415, 430)
+        MainWindow.resize(415, 488)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.horizontalLayout_5 = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.Pages = QStackedWidget(self.centralwidget)
         self.Pages.setObjectName(u"Pages")
         self.pageModo1 = QWidget()
@@ -71,15 +71,190 @@ class Ui_MainWindow(object):
         self.pagHistorico.setEnabled(True)
         self.frame = QFrame(self.pagHistorico)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(40, 10, 321, 341))
+        self.frame.setGeometry(QRect(10, 0, 350, 424))
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_18 = QLabel(self.frame)
+        self.frame_23 = QFrame(self.frame)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setFrameShape(QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_23)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.label_18 = QLabel(self.frame_23)
         self.label_18.setObjectName(u"label_18")
 
-        self.verticalLayout.addWidget(self.label_18)
+        self.horizontalLayout_6.addWidget(self.label_18)
+
+        self.nomeJogador_2 = QLabel(self.frame_23)
+        self.nomeJogador_2.setObjectName(u"nomeJogador_2")
+
+        self.horizontalLayout_6.addWidget(self.nomeJogador_2)
+
+
+        self.verticalLayout.addWidget(self.frame_23, 0, Qt.AlignTop)
+
+        self.frame_24 = QFrame(self.frame)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setFrameShape(QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.frame_25 = QFrame(self.frame_24)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setFrameShape(QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_25)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.label_28 = QLabel(self.frame_25)
+        self.label_28.setObjectName(u"label_28")
+
+        self.horizontalLayout_7.addWidget(self.label_28)
+
+        self.label_29 = QLabel(self.frame_25)
+        self.label_29.setObjectName(u"label_29")
+
+        self.horizontalLayout_7.addWidget(self.label_29)
+
+
+        self.verticalLayout_5.addWidget(self.frame_25)
+
+        self.frame_32 = QFrame(self.frame_24)
+        self.frame_32.setObjectName(u"frame_32")
+        self.frame_32.setFrameShape(QFrame.StyledPanel)
+        self.frame_32.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.frame_32)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.label_42 = QLabel(self.frame_32)
+        self.label_42.setObjectName(u"label_42")
+
+        self.horizontalLayout_14.addWidget(self.label_42)
+
+        self.label_43 = QLabel(self.frame_32)
+        self.label_43.setObjectName(u"label_43")
+
+        self.horizontalLayout_14.addWidget(self.label_43)
+
+
+        self.verticalLayout_5.addWidget(self.frame_32)
+
+        self.frame_26 = QFrame(self.frame_24)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_26)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.label_30 = QLabel(self.frame_26)
+        self.label_30.setObjectName(u"label_30")
+
+        self.horizontalLayout_8.addWidget(self.label_30)
+
+        self.label_31 = QLabel(self.frame_26)
+        self.label_31.setObjectName(u"label_31")
+
+        self.horizontalLayout_8.addWidget(self.label_31)
+
+
+        self.verticalLayout_5.addWidget(self.frame_26)
+
+        self.frame_31 = QFrame(self.frame_24)
+        self.frame_31.setObjectName(u"frame_31")
+        self.frame_31.setFrameShape(QFrame.StyledPanel)
+        self.frame_31.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.frame_31)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.label_40 = QLabel(self.frame_31)
+        self.label_40.setObjectName(u"label_40")
+
+        self.horizontalLayout_13.addWidget(self.label_40)
+
+        self.label_41 = QLabel(self.frame_31)
+        self.label_41.setObjectName(u"label_41")
+
+        self.horizontalLayout_13.addWidget(self.label_41)
+
+
+        self.verticalLayout_5.addWidget(self.frame_31)
+
+        self.frame_27 = QFrame(self.frame_24)
+        self.frame_27.setObjectName(u"frame_27")
+        self.frame_27.setFrameShape(QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_9 = QHBoxLayout(self.frame_27)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.label_32 = QLabel(self.frame_27)
+        self.label_32.setObjectName(u"label_32")
+
+        self.horizontalLayout_9.addWidget(self.label_32)
+
+        self.label_33 = QLabel(self.frame_27)
+        self.label_33.setObjectName(u"label_33")
+
+        self.horizontalLayout_9.addWidget(self.label_33)
+
+
+        self.verticalLayout_5.addWidget(self.frame_27)
+
+        self.frame_29 = QFrame(self.frame_24)
+        self.frame_29.setObjectName(u"frame_29")
+        self.frame_29.setFrameShape(QFrame.StyledPanel)
+        self.frame_29.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_11 = QHBoxLayout(self.frame_29)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_36 = QLabel(self.frame_29)
+        self.label_36.setObjectName(u"label_36")
+
+        self.horizontalLayout_11.addWidget(self.label_36)
+
+        self.label_37 = QLabel(self.frame_29)
+        self.label_37.setObjectName(u"label_37")
+
+        self.horizontalLayout_11.addWidget(self.label_37)
+
+
+        self.verticalLayout_5.addWidget(self.frame_29)
+
+        self.frame_28 = QFrame(self.frame_24)
+        self.frame_28.setObjectName(u"frame_28")
+        self.frame_28.setFrameShape(QFrame.StyledPanel)
+        self.frame_28.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_10 = QHBoxLayout(self.frame_28)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.label_34 = QLabel(self.frame_28)
+        self.label_34.setObjectName(u"label_34")
+
+        self.horizontalLayout_10.addWidget(self.label_34)
+
+        self.label_35 = QLabel(self.frame_28)
+        self.label_35.setObjectName(u"label_35")
+
+        self.horizontalLayout_10.addWidget(self.label_35)
+
+
+        self.verticalLayout_5.addWidget(self.frame_28)
+
+        self.frame_30 = QFrame(self.frame_24)
+        self.frame_30.setObjectName(u"frame_30")
+        self.frame_30.setFrameShape(QFrame.StyledPanel)
+        self.frame_30.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_12 = QHBoxLayout(self.frame_30)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.label_38 = QLabel(self.frame_30)
+        self.label_38.setObjectName(u"label_38")
+
+        self.horizontalLayout_12.addWidget(self.label_38)
+
+        self.label_39 = QLabel(self.frame_30)
+        self.label_39.setObjectName(u"label_39")
+
+        self.horizontalLayout_12.addWidget(self.label_39)
+
+
+        self.verticalLayout_5.addWidget(self.frame_30)
+
+
+        self.verticalLayout.addWidget(self.frame_24)
 
         self.voltarHistorico = QPushButton(self.frame)
         self.voltarHistorico.setObjectName(u"voltarHistorico")
@@ -87,6 +262,55 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.voltarHistorico)
 
         self.Pages.addWidget(self.pagHistorico)
+        self.procuraCadastro = QWidget()
+        self.procuraCadastro.setObjectName(u"procuraCadastro")
+        self.frame_21 = QFrame(self.procuraCadastro)
+        self.frame_21.setObjectName(u"frame_21")
+        self.frame_21.setGeometry(QRect(40, 20, 321, 341))
+        self.frame_21.setFrameShape(QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_21)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_25 = QLabel(self.frame_21)
+        self.label_25.setObjectName(u"label_25")
+
+        self.verticalLayout_3.addWidget(self.label_25)
+
+        self.label_27 = QLabel(self.frame_21)
+        self.label_27.setObjectName(u"label_27")
+
+        self.verticalLayout_3.addWidget(self.label_27)
+
+        self.frame_22 = QFrame(self.frame_21)
+        self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setFrameShape(QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_22)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.label_26 = QLabel(self.frame_22)
+        self.label_26.setObjectName(u"label_26")
+
+        self.horizontalLayout_4.addWidget(self.label_26)
+
+        self.nomeJogador = QLineEdit(self.frame_22)
+        self.nomeJogador.setObjectName(u"nomeJogador")
+
+        self.horizontalLayout_4.addWidget(self.nomeJogador)
+
+
+        self.verticalLayout_3.addWidget(self.frame_22)
+
+        self.procurarJogado = QPushButton(self.frame_21)
+        self.procurarJogado.setObjectName(u"procurarJogado")
+
+        self.verticalLayout_3.addWidget(self.procurarJogado)
+
+        self.voltarHistorico_2 = QPushButton(self.frame_21)
+        self.voltarHistorico_2.setObjectName(u"voltarHistorico_2")
+
+        self.verticalLayout_3.addWidget(self.voltarHistorico_2)
+
+        self.Pages.addWidget(self.procuraCadastro)
         self.pagHome = QWidget()
         self.pagHome.setObjectName(u"pagHome")
         self.verticalLayout_2 = QVBoxLayout(self.pagHome)
@@ -106,11 +330,6 @@ class Ui_MainWindow(object):
         self.jogoModo1.setObjectName(u"jogoModo1")
 
         self.verticalLayout_4.addWidget(self.jogoModo1)
-
-        self.jogoModo2 = QPushButton(self.frame_2)
-        self.jogoModo2.setObjectName(u"jogoModo2")
-
-        self.verticalLayout_4.addWidget(self.jogoModo2)
 
         self.sair = QPushButton(self.frame_2)
         self.sair.setObjectName(u"sair")
@@ -525,7 +744,7 @@ class Ui_MainWindow(object):
 
         self.Pages.addWidget(self.ganhouJogador)
 
-        self.verticalLayout_5.addWidget(self.Pages)
+        self.horizontalLayout_5.addWidget(self.Pages)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -538,7 +757,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -550,12 +769,33 @@ class Ui_MainWindow(object):
         self.doisJogadores.setText(QCoreApplication.translate("MainWindow", u"2 Jogadores", None))
         self.tutorial.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
         self.historico.setText(QCoreApplication.translate("MainWindow", u"Hist\u00f3rico", None))
-        self.voltarHome.setText(QCoreApplication.translate("MainWindow", u"Outros", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Hist\u00f3rico</span></p></body></html>", None))
+        self.voltarHome.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Hist\u00f3rico do jogador: </span></p></body></html>", None))
+        self.nomeJogador_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Nome_jogador</span></p></body></html>", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_43.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_40.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_41.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_38.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_39.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.voltarHistorico.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Procura de Hist\u00f3rico</span></p></body></html>", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Procure os status do jogador pelo o seu nome!</p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"Nome Registrado:", None))
+        self.procurarJogado.setText(QCoreApplication.translate("MainWindow", u"Procurar Jogador", None))
+        self.voltarHistorico_2.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">Staying Alive</span></p></body></html>", None))
-        self.jogoModo1.setText(QCoreApplication.translate("MainWindow", u"Modo 1", None))
-        self.jogoModo2.setText(QCoreApplication.translate("MainWindow", u"Modo 2", None))
+        self.jogoModo1.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
         self.sair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configura\u00e7\u00e3o do ambiente</span></p></body></html>", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Aperte o bot\u00e3o&quot; iniciar&quot; para configurar </p><p align=\"center\">o ambiente e iniciar o jogo</p></body></html>", None))

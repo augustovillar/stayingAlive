@@ -39,7 +39,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         #modo1
         self.doisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.cadastroDoisJogares))
-        self.historico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pagHistorico))
+        self.historico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.procuraCadastro))
         self.tutorial.clicked.connect(lambda: self.Pages.setCurrentWidget(self.instrucoesTutorial))
         self.voltarHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pagHome))
 
@@ -70,12 +70,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.comecarJogo.clicked.connect(lambda: self.Pages.setCurrentWidget(self.jogoAndamento))
         self.comecarJogo.clicked.connect(self.jogo_modo1)
 
-        ########################################################################################
-        #cadastra usuarios
         self.cadastrarDoisJogadores.clicked.connect(self.cadastrarUsuarios)
         
         #inicia posicionamento do modo 1
         self.iniciar.clicked.connect(self.posicionamento_modo1)
+
+        #fecha aplicativo
+        self.sair.clicked.connect(self.close)
+
+
+        self.procurarJogado.clicked.connect(self.procuraHistorico)
+        self.voltarHistorico_2.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pageModo1))
 
     def cadastrarUsuarios(self):
         db = Data_base()
@@ -87,6 +92,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         if jogador1Nome=="" or jogador2Nome=="":
             dialog = QMessageBox(parent=self, text="Não foi adicionado os nomes corretamentes!")
+            dialog.setWindowTitle("Erro no cadastro")
+            dialog.exec()
+            self.Pages.setCurrentWidget(self.cadastroDoisJogares)
+            return
+
+        if jogador1Nome==jogador2Nome:
+            dialog = QMessageBox(parent=self, text="Os nomes dos dois jogadores são iguais.")
             dialog.setWindowTitle("Erro no cadastro")
             dialog.exec()
             self.Pages.setCurrentWidget(self.cadastroDoisJogares)
@@ -240,8 +252,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         paraMusica()
                         break
 
-                    # if (int(maxRodadasDancando/2) == 1) and i==1 and numeroRodadasDancando==maxRodadasDancando-1:
-                    #     break
                 numeroRodadasDancando += 1
 
             #desliga sensor
@@ -260,9 +270,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             paraEmQualJogador = random.randint(1, 2)
             
             paraMusica()
-
-            if continuaJogo:
-                tocaMusica("xuxa_minha_rainha.mp3")
             
             #liga sensor
             self.ser.write(('L').encode('ascii'))
@@ -270,9 +277,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             while numeroRodadasParadoEmPe < maxRodadasParadoEmPe and continuaJogo:
                 for i in range(1, 3):
 
+                    tocaMusica("xuxa_minha_rainha.mp3")
+
                     self.ser.write((str(i)).encode('ascii'))
-                    if numeroRodadasParadoEmPe == 0:
-                        time.sleep(1)
+                    time.sleep(1)
                     resposta = detectaMov(tempoDeEspera=3, parado=True)
                     estado = posicionamento_mortoVivo(self.ser)
 
@@ -289,9 +297,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     #aleatoricamente escolhe em qual jogador parar
                     if (paraEmQualJogador==i and maxRodadasParadoEmPe-1==numeroRodadasParadoEmPe):
                         break
-
-                    # if int(maxRodadasParadoEmPe/2) == 1 and i==1 and numeroRodadasParadoEmPe==maxRodadasParadoEmPe-1:
-                    #     break
                     
                 numeroRodadasParadoEmPe += 1
 
@@ -315,8 +320,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 #inicia jogo do morto
                 posicaoMorto = random.randint(1, 2)
+                print(posicaoMorto)
                 self.ser.write((str(posicaoMorto)).encode('ascii'))
-                time.sleep(1.5)
+                time.sleep(0.5)
                 estado = posicionamento_mortoVivo(self.ser)
 
                 if estado == 'vivo':
@@ -327,7 +333,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                     continuaJogo = False
 
-                time.sleep(5)
+                time.sleep(3)
 
             #soma com o total
             numeroRodadasAbaixandoTotais += numeroRodadasAbaixando
@@ -385,6 +391,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             db.criarJogada(self.id_jogador1Atual, self.id_jogador2Atual, self.id_jogador2Atual, pontosJogador1, pontosJogador2, rodadas[0], rodadas[1], rodadas[2])
 
         db.close_connection()
+
+        return
+
+    def procuraHistorico(self, ):
 
         return
 
