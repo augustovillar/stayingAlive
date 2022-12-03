@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageModo1">
        <widget class="QFrame" name="frame_14">
@@ -82,10 +82,10 @@
        <widget class="QFrame" name="frame">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>350</width>
-          <height>424</height>
+          <x>-1</x>
+          <y>3</y>
+          <width>401</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -142,7 +142,7 @@
                <item>
                 <widget class="QLabel" name="label_28">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Número de Jogos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -168,7 +168,7 @@
                <item>
                 <widget class="QLabel" name="label_42">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Número de Jogos Vitoriosos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -194,7 +194,7 @@
                <item>
                 <widget class="QLabel" name="label_30">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Dançando:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -220,7 +220,7 @@
                <item>
                 <widget class="QLabel" name="label_40">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Parados:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -246,7 +246,7 @@
                <item>
                 <widget class="QLabel" name="label_32">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Mortos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -272,7 +272,7 @@
                <item>
                 <widget class="QLabel" name="label_36">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Total de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -298,7 +298,7 @@
                <item>
                 <widget class="QLabel" name="label_34">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Média de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -312,33 +312,14 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <widget class="QFrame" name="frame_30">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_12">
-               <item>
-                <widget class="QLabel" name="label_38">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_39">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
            </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="procuraOutrJogador">
+           <property name="text">
+            <string>Procurar outro jogador</string>
+           </property>
           </widget>
          </item>
          <item>
