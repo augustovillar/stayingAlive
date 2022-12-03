@@ -25,7 +25,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Stayling Alive")
-        self.ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=20)
+        self.ser = serial.Serial(nameCOM, baudrate=115200, bytesize=7, stopbits=2, parity='E', timeout=4)
 
         #appIncos = QIcon()
 
@@ -41,7 +41,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.doisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.cadastroDoisJogares))
         self.historico.clicked.connect(lambda: self.Pages.setCurrentWidget(self.procuraCadastro))
         self.tutorial.clicked.connect(lambda: self.Pages.setCurrentWidget(self.instrucoesTutorial))
-        self.voltarHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pagHome))
+        #self.voltarHome.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pagHome))
+        self.voltarHome.clicked.connect(self.close)
+
 
         #cadastro
         #self.cadastrarDoisJogadores.clicked.connect(lambda: self.Pages.setCurrentWidget(self.configuracao1))
@@ -165,28 +167,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         timeNow = timeStart
         jogadorPosicionado = 0
 
-        while timeNow-timeStart <= timeout:
-            recebeDados = self.ser.read_until(expected=('#').encode('ascii')).decode('ascii')
-            print(recebeDados)
-            distancia = int(recebeDados[4:7])
-            
-            if distancia<=220:
-                jogadorPosicionado += 1
+        if numJogador == 1:
+            tocaMusica("jogador1.mp3")
+        else:
+            tocaMusica("jogador2.mp3")
 
-            if jogadorPosicionado>=3:
+        time.sleep(2)
+
+        while timeNow-timeStart <= timeout:
+            recebeDados = self.ser.read_until(expected=('#').encode('ascii')).decode('utf-8')
+            print(recebeDados)
+            if recebeDados[0]=="0" or recebeDados[0]=="1":
+                distancia = int(recebeDados[4:7])
+            else:
+                distancia = int(recebeDados[5:8])
+            print(distancia)
+
+            
+            if distancia<=120:
+                jogadorPosicionado += 1
+                tocaMusica("foi.mp3")
+            else:
+                tocaMusica("puts.mp3")
+
+            time.sleep(1.5)
+
+            if jogadorPosicionado>=2:
                 print('Posicionamento do jogador '+str(numJogador)+' feito com sucesso!')
+                tocaMusica("posicionamento_efetuado_com_sucesso.mp3")
+                time.sleep(3.5)
                 return 'OK'
 
             timeNow = time.time()
 
         print('Posicionamento do jogador '+str(numJogador)+' não foi feita com sucesso!')
 
-
-
         return 'TIMEOUT'
 
     def posicionamento_modo1(self):
-        
+
+
+       #self.ser.write(('r').encode('ascii'))
+       
         self.ser.write(('L').encode('ascii')) #liga o vhdl
         time.sleep(0.5)
 
@@ -204,12 +226,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print("Posicionamento do jogador 2 não foi concluído corretamente.")
             return "ERRO2"
 
+        tocaMusica("pode_iniciar_o_jogo.mp3")
         self.Pages.setCurrentWidget(self.jogoComecar)
 
+        self.ser.write(('d').encode('ascii'))
         return "SUCESSO"
 
     def jogo_modo1(self):
-
+        
         continuaJogo = True
         numeroRodadasDancandoTotais = 0
         numeroRodadasDancando = 0
@@ -218,16 +242,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         numeroRodadasAbaixandoTotais = 0
         numeroRodadasAbaixando = 0
 
-        self.ser.write(('r').encode('ascii'))
-        time.sleep(0.5)
-        self.ser.write(('L').encode('ascii'))
-        time.sleep(0.5)
+        
+        #self.ser.write(('L').encode('ascii'))
+   
 
         while continuaJogo:
             #numero de rodadas da danca
             maxRodadasDancando = random.randint(1, 2)
             paraEmQualJogador  = random.randint(1, 2)
             tocaMusica("Bee Gees - StayinAlive.mp3")
+            time.sleep(1)
 
             while numeroRodadasDancando < maxRodadasDancando and continuaJogo:
                 for i in range(1, 3):
@@ -278,11 +302,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 for i in range(1, 3):
 
                     tocaMusica("xuxa_minha_rainha.mp3")
+                    time.sleep(1)
 
                     self.ser.write((str(i)).encode('ascii'))
                     time.sleep(1)
                     resposta = detectaMov(tempoDeEspera=3, parado=True)
-                    estado = posicionamento_mortoVivo(self.ser)
+                    estado = posicionamento_mortoVivo(self.ser, eMorto=False)
 
                     if resposta == 'NOK' or estado == "morto":
                         if i == 1:
@@ -301,7 +326,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 numeroRodadasParadoEmPe += 1
 
             #desliga sensor
-            self.ser.write(('d').encode('ascii'))
+            #self.ser.write(('d').encode('ascii'))
 
             #guarda info para historico
             numeroRodadasParadoEmPeTotais += numeroRodadasParadoEmPe
@@ -315,15 +340,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print("Parte morto!")
             if continuaJogo:
                 tocaMusica('no_ceu_tem_pao.mp3')
-            
-                self.ser.write(('L').encode('ascii'))
+                time.sleep(0.5)
+
+                #self.ser.write(('L').encode('ascii'))
 
                 #inicia jogo do morto
                 posicaoMorto = random.randint(1, 2)
                 print(posicaoMorto)
                 self.ser.write((str(posicaoMorto)).encode('ascii'))
-                time.sleep(0.5)
-                estado = posicionamento_mortoVivo(self.ser)
+                time.sleep(1)
+                estado = posicionamento_mortoVivo(self.ser, eMorto=True)
 
                 if estado == 'vivo':
                     if posicaoMorto == 1:
@@ -346,8 +372,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #contabiliza os pontos
 
         print("acabou")
+        if continuaJogo == False:
+            self.ser.write(('d').encode('ascii'))
         rodadas = [numeroRodadasAbaixandoTotais, numeroRodadasDancandoTotais, numeroRodadasParadoEmPeTotais]
         self.escreveJogo(rodadas, jogador1Campeao)
+
+        if jogador1Campeao:
+            tocaMusica("jogador1_voce_ganhou.mp3")
+        else:
+            tocaMusica("jogador2_voce_ganhou.mp3")
+
+        return
 
     def escreveJogo(self, rodadas=[1, 2, 3], jogador1Campeao=True):
 

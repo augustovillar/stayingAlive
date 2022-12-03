@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(415, 488)
+        MainWindow.resize(414, 488)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_5 = QHBoxLayout(self.centralwidget)
@@ -354,14 +354,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addWidget(self.label_19)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Maximum)
-
-        self.verticalLayout_16.addItem(self.verticalSpacer_7)
-
         self.label_20 = QLabel(self.frame_15)
         self.label_20.setObjectName(u"label_20")
 
-        self.verticalLayout_16.addWidget(self.label_20)
+        self.verticalLayout_16.addWidget(self.label_20, 0, Qt.AlignTop)
 
         self.iniciar = QPushButton(self.frame_15)
         self.iniciar.setObjectName(u"iniciar")
@@ -749,7 +745,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 415, 21))
+        self.menubar.setGeometry(QRect(0, 0, 414, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -757,7 +753,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(3)
+        self.Pages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -766,10 +762,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Staying Alive</span></p></body></html>", None))
-        self.doisJogadores.setText(QCoreApplication.translate("MainWindow", u"2 Jogadores", None))
+        self.doisJogadores.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
         self.tutorial.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
         self.historico.setText(QCoreApplication.translate("MainWindow", u"Hist\u00f3rico", None))
-        self.voltarHome.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.voltarHome.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Hist\u00f3rico do jogador: </span></p></body></html>", None))
         self.nomeJogador_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Nome_jogador</span></p></body></html>", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
@@ -797,10 +793,10 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">Staying Alive</span></p></body></html>", None))
         self.jogoModo1.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
         self.sair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configura\u00e7\u00e3o do ambiente</span></p></body></html>", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Aperte o bot\u00e3o&quot; iniciar&quot; para configurar </p><p align=\"center\">o ambiente e iniciar o jogo</p></body></html>", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Posicionamento dos jogadores</span></p></body></html>", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Aperte o bot\u00e3o abaixo para iniciar a confgura\u00e7\u00e3o </p><p align=\"center\">do posicionamento dos jogadores.</p><p align=\"center\">2 - Ao ser chamado, fique na posi\u00e7\u00e3o indicada pelo mestre.</p><p align=\"center\">3 - Espere o comando de voz avisar</p><p align=\"center\"> que voc\u00ea est\u00e1 posicionado corretamente.</p></body></html>", None))
         self.iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Cadastro dos Jogares</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Cadastro dos Jogadores</span></p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Jogador 1:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Jogador 2:", None))
         self.cadastrarDoisJogadores.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
@@ -818,14 +814,14 @@ class Ui_MainWindow(object):
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Erro no posicionamento </span></p><p align=\"center\"><span style=\" font-size:14pt;\">dos jogadores!</span></p></body></html>", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Houve um erro no posicionamento dos jogadores. </p><p align=\"center\">Posicionamento ir\u00e1 ser reiniciado.</p></body></html>", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Instru\u00e7\u00f5es</span></p></body></html>", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para iniciar o jogo, cada jogador deve se posicionar </p><p align=\"center\">conforme as instru\u00e7\u00f5es do dispositivo, sempre ficando </p><p align=\"center\">com cerca de 2 metros na dire\u00e7\u00e3o do sensor ultrass\u00f4nico.</p><p align=\"center\">Enquanto a m\u00fasica toca, o dispositivo ficar\u00e1 oscilando </p><p align=\"center\">entre os usu\u00e1rio verificando se eles est\u00e3o dan\u00e7ando. </p><p align=\"center\">Caso negativo, o usu\u00e1rio que n\u00e3o estiver dan\u00e7ando perder\u00e1, </p><p align=\"center\">fazendo com que o oponente ganhe 10 pontos.</p><p align=\"center\">Ap\u00f3s isso, a musica parar\u00e1 repedinamente </p><p align=\"center\">e o sensor ultrass\u00f4nico verificar\u00e1 se o jogador </p><p align=\"center\">est\u00e1 morto (abaixado) ou vivo (levantado).</p></body></html>", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para iniciar o jogo, cada jogador deve se posicionar </p><p align=\"center\">conforme as instru\u00e7\u00f5es do dispositivo, sempre ficando </p><p align=\"center\">com cerca de 1 metro na dire\u00e7\u00e3o do sensor ultrass\u00f4nico.</p><p align=\"center\">Enquanto a m\u00fasica toca, o dispositivo ficar\u00e1 oscilando </p><p align=\"center\">entre os usu\u00e1rio verificando se eles est\u00e3o dan\u00e7ando. </p><p align=\"center\">Caso negativo, o usu\u00e1rio que n\u00e3o estiver dan\u00e7ando perder\u00e1, </p><p align=\"center\">fazendo com que o oponente ganhe 10 pontos.</p><p align=\"center\">Ap\u00f3s isso, a musica parar\u00e1 repedinamente </p><p align=\"center\">e o sensor ultrass\u00f4nico verificar\u00e1 se o jogador </p><p align=\"center\">est\u00e1 morto (abaixado) ou vivo (levantado).</p></body></html>", None))
         self.voltarModo1.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogo j\u00e1 vai come\u00e7ar!</span></p></body></html>", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Dance enquanto a musica tocar,</p><p align=\"center\">fique parado quando a musica parar.</p><p align=\"center\">Quando o buzzer tocar, abaixe se o </p><p align=\"center\">mestre estiver olhando para voc\u00ea.</p></body></html>", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Dance enquanto a musica tocar</p><p align=\"center\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha</p><p align=\"center\">3 - Abaixe-se quando ouvir &quot;morreu&quot;, se o mestre olhar para voc\u00ea. </p><p align=\"center\">Clique em &quot;come\u00e7ar o jogo&quot;<br/></p></body></html>", None))
         self.comecarJogo.setText(QCoreApplication.translate("MainWindow", u"Come\u00e7ar o Jogo", None))
         self.voltarMenu_2.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogo j\u00e1 come\u00e7ou!</span></p></body></html>", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Dance enquanto a musica tocar,</p><p align=\"center\">fique parado quando a musica parar.</p><p align=\"center\">Quando o buzzer tocar, abaixe se o </p><p align=\"center\">mestre estiver olhando para voc\u00ea.</p></body></html>", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Dance enquanto a musica tocar</p><p align=\"center\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha</p><p align=\"center\"> 3 - Abaixe-se quando ouvir &quot;morreu&quot;,  se o mestre olhar para voc\u00ea. </p><p align=\"center\">Preste aten\u00e7\u00e3o e se diverta!</p><p align=\"center\"><br/></p></body></html>", None))
         self.pausarJogo.setText(QCoreApplication.translate("MainWindow", u"Pausar o Jogo", None))
         self.voltarMenu.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.jogadorGanhador.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogador 1 ganhou!</span></p></body></html>", None))

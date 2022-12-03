@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>415</width>
+    <width>414</width>
     <height>488</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>13</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageModo1">
        <widget class="QFrame" name="frame_14">
@@ -47,7 +47,7 @@
          <item>
           <widget class="QPushButton" name="doisJogadores">
            <property name="text">
-            <string>Iniciar Jogo</string>
+            <string>Jogar</string>
            </property>
           </widget>
          </item>
@@ -68,7 +68,7 @@
          <item>
           <widget class="QPushButton" name="voltarHome">
            <property name="text">
-            <string>Voltar</string>
+            <string>Sair</string>
            </property>
           </widget>
          </item>
@@ -478,30 +478,14 @@
          <item>
           <widget class="QLabel" name="label_19">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Configuração do ambiente&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Posicionamento dos jogadores&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
-         <item>
-          <spacer name="verticalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Maximum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QLabel" name="label_20">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Aperte o botão&amp;quot; iniciar&amp;quot; para configurar &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;o ambiente e iniciar o jogo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Aperte o botão abaixo para iniciar a confguração &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;do posicionamento dos jogadores.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Ao ser chamado, fique na posição indicada pelo mestre.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;3 - Espere o comando de voz avisar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; que você está posicionado corretamente.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -535,7 +519,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Cadastro dos Jogares&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Cadastro dos Jogadores&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -910,7 +894,7 @@
            <item>
             <widget class="QLabel" name="label_15">
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para iniciar o jogo, cada jogador deve se posicionar &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;conforme as instruções do dispositivo, sempre ficando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;com cerca de 2 metros na direção do sensor ultrassônico.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Enquanto a música toca, o dispositivo ficará oscilando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;entre os usuário verificando se eles estão dançando. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Caso negativo, o usuário que não estiver dançando perderá, &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fazendo com que o oponente ganhe 10 pontos.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Após isso, a musica parará repedinamente &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;e o sensor ultrassônico verificará se o jogador &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;está morto (abaixado) ou vivo (levantado).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para iniciar o jogo, cada jogador deve se posicionar &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;conforme as instruções do dispositivo, sempre ficando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;com cerca de 1 metro na direção do sensor ultrassônico.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Enquanto a música toca, o dispositivo ficará oscilando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;entre os usuário verificando se eles estão dançando. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Caso negativo, o usuário que não estiver dançando perderá, &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fazendo com que o oponente ganhe 10 pontos.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Após isso, a musica parará repedinamente &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;e o sensor ultrassônico verificará se o jogador &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;está morto (abaixado) ou vivo (levantado).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -962,7 +946,7 @@
             <item>
              <widget class="QLabel" name="label_24">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Dance enquanto a musica tocar,&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fique parado quando a musica parar.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Quando o buzzer tocar, abaixe se o &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;mestre estiver olhando para você.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Dance enquanto a musica tocar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;, se o mestre olhar para você. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Clique em &amp;quot;começar o jogo&amp;quot;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -1038,7 +1022,7 @@
             <item>
              <widget class="QLabel" name="label_17">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Dance enquanto a musica tocar,&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;e abaixe-se quando ouvir &amp;quot;morreu&amp;quot;. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Preste atenção e se diverta!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Dance enquanto a musica tocar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;,  se o mestre olhar para você. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Preste atenção e se diverta!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -1177,7 +1161,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>415</width>
+     <width>414</width>
      <height>21</height>
     </rect>
    </property>
