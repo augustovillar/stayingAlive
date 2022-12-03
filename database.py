@@ -78,6 +78,16 @@ class Data_base():
             print(e)
             return "DEU ERRO!"
 
+    def procuraJogos(self, id_jogador):
+
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(f"SELECT * FROM Jogos WHERE ID_JOGADOR1 = '{id_jogador}' or ID_JOGADOR2 = {id_jogador}")
+            return cursor.fetchall()
+        except Exception as e:
+            print(e)
+            return "DEU ERRO!"
+
     # def procura_jogador_id(self, nome):
 
     #     try:

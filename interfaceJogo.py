@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.pageModo1.setObjectName(u"pageModo1")
         self.frame_14 = QFrame(self.pageModo1)
         self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setGeometry(QRect(30, 3, 331, 361))
+        self.frame_14.setGeometry(QRect(0, 3, 391, 421))
         self.frame_14.setFrameShape(QFrame.StyledPanel)
         self.frame_14.setFrameShadow(QFrame.Raised)
         self.verticalLayout_15 = QVBoxLayout(self.frame_14)
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
         self.pagHistorico.setEnabled(True)
         self.frame = QFrame(self.pagHistorico)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(10, 0, 350, 424))
+        self.frame.setGeometry(QRect(-1, 3, 391, 421))
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
@@ -112,10 +112,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.label_28)
 
-        self.label_29 = QLabel(self.frame_25)
-        self.label_29.setObjectName(u"label_29")
+        self.numJogos = QLabel(self.frame_25)
+        self.numJogos.setObjectName(u"numJogos")
 
-        self.horizontalLayout_7.addWidget(self.label_29)
+        self.horizontalLayout_7.addWidget(self.numJogos)
 
 
         self.verticalLayout_5.addWidget(self.frame_25)
@@ -131,10 +131,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.label_42)
 
-        self.label_43 = QLabel(self.frame_32)
-        self.label_43.setObjectName(u"label_43")
+        self.numJogosVic = QLabel(self.frame_32)
+        self.numJogosVic.setObjectName(u"numJogosVic")
 
-        self.horizontalLayout_14.addWidget(self.label_43)
+        self.horizontalLayout_14.addWidget(self.numJogosVic)
 
 
         self.verticalLayout_5.addWidget(self.frame_32)
@@ -150,10 +150,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.label_30)
 
-        self.label_31 = QLabel(self.frame_26)
-        self.label_31.setObjectName(u"label_31")
+        self.pontosDancando = QLabel(self.frame_26)
+        self.pontosDancando.setObjectName(u"pontosDancando")
 
-        self.horizontalLayout_8.addWidget(self.label_31)
+        self.horizontalLayout_8.addWidget(self.pontosDancando)
 
 
         self.verticalLayout_5.addWidget(self.frame_26)
@@ -169,10 +169,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.label_40)
 
-        self.label_41 = QLabel(self.frame_31)
-        self.label_41.setObjectName(u"label_41")
+        self.pontosParado = QLabel(self.frame_31)
+        self.pontosParado.setObjectName(u"pontosParado")
 
-        self.horizontalLayout_13.addWidget(self.label_41)
+        self.horizontalLayout_13.addWidget(self.pontosParado)
 
 
         self.verticalLayout_5.addWidget(self.frame_31)
@@ -188,10 +188,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addWidget(self.label_32)
 
-        self.label_33 = QLabel(self.frame_27)
-        self.label_33.setObjectName(u"label_33")
+        self.pontosMortos = QLabel(self.frame_27)
+        self.pontosMortos.setObjectName(u"pontosMortos")
 
-        self.horizontalLayout_9.addWidget(self.label_33)
+        self.horizontalLayout_9.addWidget(self.pontosMortos)
 
 
         self.verticalLayout_5.addWidget(self.frame_27)
@@ -207,10 +207,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.label_36)
 
-        self.label_37 = QLabel(self.frame_29)
-        self.label_37.setObjectName(u"label_37")
+        self.totalPontos = QLabel(self.frame_29)
+        self.totalPontos.setObjectName(u"totalPontos")
 
-        self.horizontalLayout_11.addWidget(self.label_37)
+        self.horizontalLayout_11.addWidget(self.totalPontos)
 
 
         self.verticalLayout_5.addWidget(self.frame_29)
@@ -226,35 +226,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.label_34)
 
-        self.label_35 = QLabel(self.frame_28)
-        self.label_35.setObjectName(u"label_35")
+        self.mediaPontos = QLabel(self.frame_28)
+        self.mediaPontos.setObjectName(u"mediaPontos")
 
-        self.horizontalLayout_10.addWidget(self.label_35)
+        self.horizontalLayout_10.addWidget(self.mediaPontos)
 
 
         self.verticalLayout_5.addWidget(self.frame_28)
 
-        self.frame_30 = QFrame(self.frame_24)
-        self.frame_30.setObjectName(u"frame_30")
-        self.frame_30.setFrameShape(QFrame.StyledPanel)
-        self.frame_30.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_12 = QHBoxLayout(self.frame_30)
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.label_38 = QLabel(self.frame_30)
-        self.label_38.setObjectName(u"label_38")
-
-        self.horizontalLayout_12.addWidget(self.label_38)
-
-        self.label_39 = QLabel(self.frame_30)
-        self.label_39.setObjectName(u"label_39")
-
-        self.horizontalLayout_12.addWidget(self.label_39)
-
-
-        self.verticalLayout_5.addWidget(self.frame_30)
-
 
         self.verticalLayout.addWidget(self.frame_24)
+
+        self.procuraOutrJogador = QPushButton(self.frame)
+        self.procuraOutrJogador.setObjectName(u"procuraOutrJogador")
+
+        self.verticalLayout.addWidget(self.procuraOutrJogador)
 
         self.voltarHistorico = QPushButton(self.frame)
         self.voltarHistorico.setObjectName(u"voltarHistorico")
@@ -266,7 +252,7 @@ class Ui_MainWindow(object):
         self.procuraCadastro.setObjectName(u"procuraCadastro")
         self.frame_21 = QFrame(self.procuraCadastro)
         self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setGeometry(QRect(40, 20, 321, 341))
+        self.frame_21.setGeometry(QRect(0, 0, 391, 421))
         self.frame_21.setFrameShape(QFrame.StyledPanel)
         self.frame_21.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame_21)
@@ -311,40 +297,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.voltarHistorico_2)
 
         self.Pages.addWidget(self.procuraCadastro)
-        self.pagHome = QWidget()
-        self.pagHome.setObjectName(u"pagHome")
-        self.verticalLayout_2 = QVBoxLayout(self.pagHome)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.frame_2 = QFrame(self.pagHome)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.label = QLabel(self.frame_2)
-        self.label.setObjectName(u"label")
-
-        self.verticalLayout_4.addWidget(self.label)
-
-        self.jogoModo1 = QPushButton(self.frame_2)
-        self.jogoModo1.setObjectName(u"jogoModo1")
-
-        self.verticalLayout_4.addWidget(self.jogoModo1)
-
-        self.sair = QPushButton(self.frame_2)
-        self.sair.setObjectName(u"sair")
-
-        self.verticalLayout_4.addWidget(self.sair)
-
-
-        self.verticalLayout_2.addWidget(self.frame_2)
-
-        self.Pages.addWidget(self.pagHome)
         self.iniciar_config = QWidget()
         self.iniciar_config.setObjectName(u"iniciar_config")
         self.frame_15 = QFrame(self.iniciar_config)
         self.frame_15.setObjectName(u"frame_15")
-        self.frame_15.setGeometry(QRect(0, 0, 401, 361))
+        self.frame_15.setGeometry(QRect(0, 0, 391, 421))
         self.frame_15.setFrameShape(QFrame.StyledPanel)
         self.frame_15.setFrameShadow(QFrame.Raised)
         self.verticalLayout_16 = QVBoxLayout(self.frame_15)
@@ -369,7 +326,7 @@ class Ui_MainWindow(object):
         self.cadastroDoisJogares.setObjectName(u"cadastroDoisJogares")
         self.frame_3 = QFrame(self.cadastroDoisJogares)
         self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setGeometry(QRect(29, 11, 341, 351))
+        self.frame_3.setGeometry(QRect(-1, 1, 391, 421))
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_3)
@@ -437,117 +394,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.frame_6)
 
         self.Pages.addWidget(self.cadastroDoisJogares)
-        self.configuracao1 = QWidget()
-        self.configuracao1.setObjectName(u"configuracao1")
-        self.frame_7 = QFrame(self.configuracao1)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setGeometry(QRect(0, -2, 391, 371))
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.frame_7)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.label_6 = QLabel(self.frame_7)
-        self.label_6.setObjectName(u"label_6")
-
-        self.verticalLayout_7.addWidget(self.label_6)
-
-        self.verticalSpacer = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Maximum)
-
-        self.verticalLayout_7.addItem(self.verticalSpacer)
-
-        self.label_7 = QLabel(self.frame_7)
-        self.label_7.setObjectName(u"label_7")
-
-        self.verticalLayout_7.addWidget(self.label_7)
-
-        self.cancelar_conf1 = QPushButton(self.frame_7)
-        self.cancelar_conf1.setObjectName(u"cancelar_conf1")
-
-        self.verticalLayout_7.addWidget(self.cancelar_conf1)
-
-        self.Pages.addWidget(self.configuracao1)
-        self.configuracao2 = QWidget()
-        self.configuracao2.setObjectName(u"configuracao2")
-        self.frame_8 = QFrame(self.configuracao2)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setGeometry(QRect(10, 6, 381, 371))
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_8 = QVBoxLayout(self.frame_8)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.label_8 = QLabel(self.frame_8)
-        self.label_8.setObjectName(u"label_8")
-
-        self.verticalLayout_8.addWidget(self.label_8)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Maximum)
-
-        self.verticalLayout_8.addItem(self.verticalSpacer_2)
-
-        self.label_9 = QLabel(self.frame_8)
-        self.label_9.setObjectName(u"label_9")
-
-        self.verticalLayout_8.addWidget(self.label_9)
-
-        self.cancelar_conf2 = QPushButton(self.frame_8)
-        self.cancelar_conf2.setObjectName(u"cancelar_conf2")
-
-        self.verticalLayout_8.addWidget(self.cancelar_conf2)
-
-        self.Pages.addWidget(self.configuracao2)
-        self.sucesso1 = QWidget()
-        self.sucesso1.setObjectName(u"sucesso1")
-        self.frame_9 = QFrame(self.sucesso1)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setGeometry(QRect(0, 13, 391, 361))
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.frame_9)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.label_10 = QLabel(self.frame_9)
-        self.label_10.setObjectName(u"label_10")
-
-        self.verticalLayout_9.addWidget(self.label_10)
-
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
-
-        self.verticalLayout_9.addItem(self.verticalSpacer_3)
-
-        self.label_11 = QLabel(self.frame_9)
-        self.label_11.setObjectName(u"label_11")
-
-        self.verticalLayout_9.addWidget(self.label_11)
-
-        self.Pages.addWidget(self.sucesso1)
-        self.sucesso2 = QWidget()
-        self.sucesso2.setObjectName(u"sucesso2")
-        self.frame_10 = QFrame(self.sucesso2)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setGeometry(QRect(0, 0, 391, 371))
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.frame_10)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.label_12 = QLabel(self.frame_10)
-        self.label_12.setObjectName(u"label_12")
-
-        self.verticalLayout_10.addWidget(self.label_12)
-
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
-
-        self.verticalLayout_10.addItem(self.verticalSpacer_4)
-
-        self.label_13 = QLabel(self.frame_10)
-        self.label_13.setObjectName(u"label_13")
-
-        self.verticalLayout_10.addWidget(self.label_13)
-
-        self.Pages.addWidget(self.sucesso2)
         self.erroConfiguracao = QWidget()
         self.erroConfiguracao.setObjectName(u"erroConfiguracao")
         self.frame_16 = QFrame(self.erroConfiguracao)
         self.frame_16.setObjectName(u"frame_16")
-        self.frame_16.setGeometry(QRect(30, 30, 341, 321))
+        self.frame_16.setGeometry(QRect(0, 0, 391, 421))
         self.frame_16.setFrameShape(QFrame.StyledPanel)
         self.frame_16.setFrameShadow(QFrame.Raised)
         self.verticalLayout_17 = QVBoxLayout(self.frame_16)
@@ -566,13 +417,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.label_22)
 
+        self.voltarPosicionamento = QPushButton(self.frame_16)
+        self.voltarPosicionamento.setObjectName(u"voltarPosicionamento")
+
+        self.verticalLayout_17.addWidget(self.voltarPosicionamento)
+
         self.Pages.addWidget(self.erroConfiguracao)
         self.instrucoesTutorial = QWidget()
         self.instrucoesTutorial.setObjectName(u"instrucoesTutorial")
-        self.verticalLayout_12 = QVBoxLayout(self.instrucoesTutorial)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.frame_11 = QFrame(self.instrucoesTutorial)
         self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setGeometry(QRect(-1, -1, 391, 421))
         self.frame_11.setFrameShape(QFrame.StyledPanel)
         self.frame_11.setFrameShadow(QFrame.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.frame_11)
@@ -596,15 +451,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.voltarModo1)
 
-
-        self.verticalLayout_12.addWidget(self.frame_11)
-
         self.Pages.addWidget(self.instrucoesTutorial)
         self.jogoComecar = QWidget()
         self.jogoComecar.setObjectName(u"jogoComecar")
         self.frame_19 = QFrame(self.jogoComecar)
         self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setGeometry(QRect(10, 10, 361, 371))
+        self.frame_19.setGeometry(QRect(0, 0, 391, 421))
         self.frame_19.setFrameShape(QFrame.StyledPanel)
         self.frame_19.setFrameShadow(QFrame.Raised)
         self.verticalLayout_20 = QVBoxLayout(self.frame_19)
@@ -647,7 +499,7 @@ class Ui_MainWindow(object):
         self.jogoAndamento.setObjectName(u"jogoAndamento")
         self.frame_12 = QFrame(self.jogoAndamento)
         self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setGeometry(QRect(9, -1, 361, 371))
+        self.frame_12.setGeometry(QRect(-1, -1, 391, 421))
         self.frame_12.setFrameShape(QFrame.StyledPanel)
         self.frame_12.setFrameShadow(QFrame.Raised)
         self.verticalLayout_14 = QVBoxLayout(self.frame_12)
@@ -690,7 +542,7 @@ class Ui_MainWindow(object):
         self.ganhouJogador.setObjectName(u"ganhouJogador")
         self.frame_17 = QFrame(self.ganhouJogador)
         self.frame_17.setObjectName(u"frame_17")
-        self.frame_17.setGeometry(QRect(20, 10, 351, 361))
+        self.frame_17.setGeometry(QRect(0, 0, 391, 421))
         self.frame_17.setFrameShape(QFrame.StyledPanel)
         self.frame_17.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_17)
@@ -768,63 +620,50 @@ class Ui_MainWindow(object):
         self.voltarHome.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Hist\u00f3rico do jogador: </span></p></body></html>", None))
         self.nomeJogador_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Nome_jogador</span></p></body></html>", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_34.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_35.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:10pt;\">N\u00famero de Jogos:</span></p></body></html>", None))
+        self.numJogos.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">N\u00famero de Jogos Vitoriosos:</span></p></body></html>", None))
+        self.numJogosVic.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">Pontos Dan\u00e7ando:</span></p></body></html>", None))
+        self.pontosDancando.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_40.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">Pontos Parados:</span></p></body></html>", None))
+        self.pontosParado.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">Pontos Mortos:</span></p></body></html>", None))
+        self.pontosMortos.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">Total de Pontos:</span></p></body></html>", None))
+        self.totalPontos.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:9pt;\">M\u00e9dia de Pontos:</span></p></body></html>", None))
+        self.mediaPontos.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">TextLabel</span></p></body></html>", None))
+        self.procuraOutrJogador.setText(QCoreApplication.translate("MainWindow", u"Procurar outro jogador", None))
         self.voltarHistorico.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Procura de Hist\u00f3rico</span></p></body></html>", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Procure os status do jogador pelo o seu nome!</p></body></html>", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"Nome Registrado:", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:11pt;\">Procure os status do jogador pelo o seu nome!</span></p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt;\">Nome Registrado:</span></p></body></html>", None))
         self.procurarJogado.setText(QCoreApplication.translate("MainWindow", u"Procurar Jogador", None))
         self.voltarHistorico_2.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">Staying Alive</span></p></body></html>", None))
-        self.jogoModo1.setText(QCoreApplication.translate("MainWindow", u"Jogar", None))
-        self.sair.setText(QCoreApplication.translate("MainWindow", u"Sair", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Posicionamento dos jogadores</span></p></body></html>", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Aperte o bot\u00e3o abaixo para iniciar a confgura\u00e7\u00e3o </p><p align=\"center\">do posicionamento dos jogadores.</p><p align=\"center\">2 - Ao ser chamado, fique na posi\u00e7\u00e3o indicada pelo mestre.</p><p align=\"center\">3 - Espere o comando de voz avisar</p><p align=\"center\"> que voc\u00ea est\u00e1 posicionado corretamente.</p></body></html>", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt;\">1 - Aperte o bot\u00e3o abaixo para iniciar a confgura\u00e7\u00e3o </span></p><p align=\"center\"><span style=\" font-size:9pt;\">do posicionamento dos jogadores.</span></p><p align=\"center\"><span style=\" font-size:9pt;\">2 - Ao ser chamado, fique na posi\u00e7\u00e3o indicada pelo mestre.</span></p><p align=\"center\"><span style=\" font-size:9pt;\">3 - Espere o comando de voz avisar</span></p><p align=\"center\"><span style=\" font-size:9pt;\">que voc\u00ea est\u00e1 posicionado corretamente.</span></p></body></html>", None))
         self.iniciar.setText(QCoreApplication.translate("MainWindow", u"Iniciar", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Cadastro dos Jogadores</span></p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Jogador 1:", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Jogador 2:", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">Jogador 1:</span></p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:9pt;\">Jogador 2:</span></p></body></html>", None))
         self.cadastrarDoisJogadores.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.cancelarCadModo1.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configurando o ambiente...</span></p></body></html>", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Jogador 1: Fique na frente</p><p align=\"center\">do sensor ultrassonico.</p></body></html>", None))
-        self.cancelar_conf1.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Configurando o ambiente...</span></p></body></html>", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Jogador 1: Fique na frente na frente </p><p align=\"center\">do sensor ultrassonico.</p></body></html>", None))
-        self.cancelar_conf2.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Jogador 1 posicionado</span></p><p align=\"center\"><span style=\" font-size:14pt;\">corretamente!</span></p></body></html>", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Prossiga com o pr\u00f3ximo usu\u00e1rio </p><p align=\"center\">para o seu posicionamento.</p></body></html>", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Jogador 2 posicionado</span></p><p align=\"center\"><span style=\" font-size:14pt;\">corretamente!</span></p></body></html>", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Prepare para o as instru\u00e7\u00f5es do jogo.</p></body></html>", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Erro no posicionamento </span></p><p align=\"center\"><span style=\" font-size:14pt;\">dos jogadores!</span></p></body></html>", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Houve um erro no posicionamento dos jogadores. </p><p align=\"center\">Posicionamento ir\u00e1 ser reiniciado.</p></body></html>", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt;\">Houve um erro no posicionamento dos jogadores. </span></p><p align=\"center\"><span style=\" font-size:9pt;\">Posicionamento ir\u00e1 ser reiniciado.</span></p></body></html>", None))
+        self.voltarPosicionamento.setText(QCoreApplication.translate("MainWindow", u"Voltar para Posicionamento", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Instru\u00e7\u00f5es</span></p></body></html>", None))
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para iniciar o jogo, cada jogador deve se posicionar </p><p align=\"center\">conforme as instru\u00e7\u00f5es do dispositivo, sempre ficando </p><p align=\"center\">com cerca de 1 metro na dire\u00e7\u00e3o do sensor ultrass\u00f4nico.</p><p align=\"center\">Enquanto a m\u00fasica toca, o dispositivo ficar\u00e1 oscilando </p><p align=\"center\">entre os usu\u00e1rio verificando se eles est\u00e3o dan\u00e7ando. </p><p align=\"center\">Caso negativo, o usu\u00e1rio que n\u00e3o estiver dan\u00e7ando perder\u00e1, </p><p align=\"center\">fazendo com que o oponente ganhe 10 pontos.</p><p align=\"center\">Ap\u00f3s isso, a musica parar\u00e1 repedinamente </p><p align=\"center\">e o sensor ultrass\u00f4nico verificar\u00e1 se o jogador </p><p align=\"center\">est\u00e1 morto (abaixado) ou vivo (levantado).</p></body></html>", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para iniciar o jogo, cada jogador deve se posicionar </p><p align=\"center\">conforme as instru\u00e7\u00f5es do dispositivo, sempre ficando </p><p align=\"center\">com cerca de 1 metro na dire\u00e7\u00e3o do sensor ultrass\u00f4nico.</p><p align=\"center\">Enquanto a m\u00fasica toca, o dispositivo ficar\u00e1 oscilando </p><p align=\"center\">entre os usu\u00e1rio verificando se eles est\u00e3o dan\u00e7ando. </p><p align=\"center\">Caso negativo, o usu\u00e1rio que n\u00e3o estiver dan\u00e7ando perder\u00e1, </p><p align=\"center\">fazendo com que o oponente ganhe 10 pontos,</p><p align=\"center\">al\u00e9m dos pontos das rodadas. Ap\u00f3s isso, a m\u00fasica</p><p align=\"center\">parar\u00e1 repedinamente e o sensor ultrass\u00f4nico verificar\u00e1</p><p align=\"center\">se o jogador est\u00e1 morto (abaixado) ou vivo (levantado).</p></body></html>", None))
         self.voltarModo1.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogo j\u00e1 vai come\u00e7ar!</span></p></body></html>", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Dance enquanto a musica tocar</p><p align=\"center\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha</p><p align=\"center\">3 - Abaixe-se quando ouvir &quot;morreu&quot;, se o mestre olhar para voc\u00ea. </p><p align=\"center\">Clique em &quot;come\u00e7ar o jogo&quot;<br/></p></body></html>", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt;\">1 - Dance enquanto a musica estiver tocando!</span></p><p align=\"center\"><span style=\" font-size:9pt;\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha.</span></p><p align=\"center\"><span style=\" font-size:9pt;\">3 - Abaixe-se quando ouvir &quot;morreu&quot;, se o mestre</span></p><p align=\"center\"><span style=\" font-size:9pt;\">estiver olhando para voc\u00ea. Clique em &quot;come\u00e7ar </span></p><p align=\"center\"><span style=\" font-size:9pt;\">o jogo&quot; para iniciar a divers\u00e3o!</span></p></body></html>", None))
         self.comecarJogo.setText(QCoreApplication.translate("MainWindow", u"Come\u00e7ar o Jogo", None))
         self.voltarMenu_2.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogo j\u00e1 come\u00e7ou!</span></p></body></html>", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">1 - Dance enquanto a musica tocar</p><p align=\"center\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha</p><p align=\"center\"> 3 - Abaixe-se quando ouvir &quot;morreu&quot;,  se o mestre olhar para voc\u00ea. </p><p align=\"center\">Preste aten\u00e7\u00e3o e se diverta!</p><p align=\"center\"><br/></p></body></html>", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:9pt;\">1 - Dance enquanto a musica tocar</span></p><p align=\"center\"><span style=\" font-size:9pt;\">2 - Fique parado ao ouvir &quot;est\u00e1tua&quot; de nossa rainha</span></p><p align=\"center\"><span style=\" font-size:9pt;\">3 - Abaixe-se quando ouvir &quot;morreu&quot;, se o mestre olhar</span></p><p align=\"center\"><span style=\" font-size:9pt;\"> para voc\u00ea. </span></p><p align=\"center\"><span style=\" font-size:9pt;\">Preste aten\u00e7\u00e3o e se diverta!</span></p></body></html>", None))
         self.pausarJogo.setText(QCoreApplication.translate("MainWindow", u"Pausar o Jogo", None))
         self.voltarMenu.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.jogadorGanhador.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogador 1 ganhou!</span></p></body></html>", None))
+        self.jogadorGanhador.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">O Jogador X ganhou!</span></p></body></html>", None))
         self.pontuacaoFim1.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador 1, :</p></body></html>", None))
         self.pontuacaoFim2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Pontua\u00e7\u00e3o do jogador2, :</p></body></html>", None))
         self.telaDePreparo.setText(QCoreApplication.translate("MainWindow", u"Recome\u00e7ar com os mesmos participantes", None))

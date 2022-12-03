@@ -18,16 +18,16 @@
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageModo1">
        <widget class="QFrame" name="frame_14">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>0</x>
           <y>3</y>
-          <width>331</width>
-          <height>361</height>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -84,7 +84,7 @@
          <rect>
           <x>-1</x>
           <y>3</y>
-          <width>401</width>
+          <width>391</width>
           <height>421</height>
          </rect>
         </property>
@@ -147,9 +147,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_29">
+                <widget class="QLabel" name="numJogos">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -173,9 +173,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_43">
+                <widget class="QLabel" name="numJogosVic">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -194,14 +194,14 @@
                <item>
                 <widget class="QLabel" name="label_30">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Dançando:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pontos Dançando:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_31">
+                <widget class="QLabel" name="pontosDancando">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -220,14 +220,14 @@
                <item>
                 <widget class="QLabel" name="label_40">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Parados:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pontos Parados:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_41">
+                <widget class="QLabel" name="pontosParado">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -246,14 +246,14 @@
                <item>
                 <widget class="QLabel" name="label_32">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Pontos Mortos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pontos Mortos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_33">
+                <widget class="QLabel" name="pontosMortos">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -272,14 +272,14 @@
                <item>
                 <widget class="QLabel" name="label_36">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Total de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Total de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_37">
+                <widget class="QLabel" name="totalPontos">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -298,14 +298,14 @@
                <item>
                 <widget class="QLabel" name="label_34">
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Média de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Média de Pontos:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_35">
+                <widget class="QLabel" name="mediaPontos">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -336,10 +336,10 @@
        <widget class="QFrame" name="frame_21">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>20</y>
-          <width>321</width>
-          <height>341</height>
+          <x>0</x>
+          <y>0</y>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -359,7 +359,7 @@
          <item>
           <widget class="QLabel" name="label_27">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Procure os status do jogador pelo o seu nome!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Procure os status do jogador pelo o seu nome!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -375,7 +375,7 @@
             <item>
              <widget class="QLabel" name="label_26">
               <property name="text">
-               <string>Nome Registrado:</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Nome Registrado:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -402,51 +402,14 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="pagHome">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QFrame" name="frame_2">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Staying Alive&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="jogoModo1">
-             <property name="text">
-              <string>Jogar</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="sair">
-             <property name="text">
-              <string>Sair</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
       <widget class="QWidget" name="iniciar_config">
        <widget class="QFrame" name="frame_15">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>401</width>
-          <height>361</height>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -466,7 +429,7 @@
          <item alignment="Qt::AlignTop">
           <widget class="QLabel" name="label_20">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Aperte o botão abaixo para iniciar a confguração &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;do posicionamento dos jogadores.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Ao ser chamado, fique na posição indicada pelo mestre.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;3 - Espere o comando de voz avisar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; que você está posicionado corretamente.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;1 - Aperte o botão abaixo para iniciar a confguração &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;do posicionamento dos jogadores.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;2 - Ao ser chamado, fique na posição indicada pelo mestre.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;3 - Espere o comando de voz avisar&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;que você está posicionado corretamente.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -484,10 +447,10 @@
        <widget class="QFrame" name="frame_3">
         <property name="geometry">
          <rect>
-          <x>29</x>
-          <y>11</y>
-          <width>341</width>
-          <height>351</height>
+          <x>-1</x>
+          <y>1</y>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -516,7 +479,7 @@
             <item>
              <widget class="QLabel" name="label_4">
               <property name="text">
-               <string>Jogador 1:</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jogador 1:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -538,7 +501,7 @@
             <item>
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>Jogador 2:</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jogador 2:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -577,228 +540,14 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="configuracao1">
-       <widget class="QFrame" name="frame_7">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>-2</y>
-          <width>391</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Configurando o ambiente...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Maximum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Jogador 1: Fique na frente&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;do sensor ultrassonico.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="cancelar_conf1">
-           <property name="text">
-            <string>Cancelar</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="configuracao2">
-       <widget class="QFrame" name="frame_8">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>6</y>
-          <width>381</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Configurando o ambiente...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Maximum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Jogador 1: Fique na frente na frente &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;do sensor ultrassonico.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="cancelar_conf2">
-           <property name="text">
-            <string>Cancelar</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="sucesso1">
-       <widget class="QFrame" name="frame_9">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>13</y>
-          <width>391</width>
-          <height>361</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_9">
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Jogador 1 posicionado&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;corretamente!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Prossiga com o próximo usuário &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;para o seu posicionamento.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="sucesso2">
-       <widget class="QFrame" name="frame_10">
+      <widget class="QWidget" name="erroConfiguracao">
+       <widget class="QFrame" name="frame_16">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
           <width>391</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
-         <item>
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Jogador 2 posicionado&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;corretamente!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Prepare para o as instruções do jogo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="erroConfiguracao">
-       <widget class="QFrame" name="frame_16">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>30</y>
-          <width>341</width>
-          <height>321</height>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -834,7 +583,14 @@
          <item>
           <widget class="QLabel" name="label_22">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Houve um erro no posicionamento dos jogadores. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Posicionamento irá ser reiniciado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Houve um erro no posicionamento dos jogadores. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Posicionamento irá ser reiniciado.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="voltarPosicionamento">
+           <property name="text">
+            <string>Voltar para Posicionamento</string>
            </property>
           </widget>
          </item>
@@ -842,63 +598,67 @@
        </widget>
       </widget>
       <widget class="QWidget" name="instrucoesTutorial">
-       <layout class="QVBoxLayout" name="verticalLayout_12">
-        <item>
-         <widget class="QFrame" name="frame_11">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_11">
-           <item>
-            <widget class="QLabel" name="label_14">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Instruções&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_15">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para iniciar o jogo, cada jogador deve se posicionar &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;conforme as instruções do dispositivo, sempre ficando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;com cerca de 1 metro na direção do sensor ultrassônico.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Enquanto a música toca, o dispositivo ficará oscilando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;entre os usuário verificando se eles estão dançando. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Caso negativo, o usuário que não estiver dançando perderá, &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fazendo com que o oponente ganhe 10 pontos.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Após isso, a musica parará repedinamente &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;e o sensor ultrassônico verificará se o jogador &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;está morto (abaixado) ou vivo (levantado).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="voltarModo1">
-             <property name="text">
-              <string>Voltar</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QFrame" name="frame_11">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>391</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Instruções&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para iniciar o jogo, cada jogador deve se posicionar &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;conforme as instruções do dispositivo, sempre ficando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;com cerca de 1 metro na direção do sensor ultrassônico.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Enquanto a música toca, o dispositivo ficará oscilando &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;entre os usuário verificando se eles estão dançando. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Caso negativo, o usuário que não estiver dançando perderá, &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;fazendo com que o oponente ganhe 10 pontos,&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;além dos pontos das rodadas. Após isso, a música&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;parará repedinamente e o sensor ultrassônico verificará&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;se o jogador está morto (abaixado) ou vivo (levantado).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="voltarModo1">
+           <property name="text">
+            <string>Voltar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="jogoComecar">
        <widget class="QFrame" name="frame_19">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>361</width>
-          <height>371</height>
+          <x>0</x>
+          <y>0</y>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -927,7 +687,7 @@
             <item>
              <widget class="QLabel" name="label_24">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Dance enquanto a musica tocar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;, se o mestre olhar para você. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Clique em &amp;quot;começar o jogo&amp;quot;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;1 - Dance enquanto a musica estiver tocando!&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;, se o mestre&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;estiver olhando para você. Clique em &amp;quot;começar &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;o jogo&amp;quot; para iniciar a diversão!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -971,10 +731,10 @@
        <widget class="QFrame" name="frame_12">
         <property name="geometry">
          <rect>
-          <x>9</x>
+          <x>-1</x>
           <y>-1</y>
-          <width>361</width>
-          <height>371</height>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1003,7 +763,7 @@
             <item>
              <widget class="QLabel" name="label_17">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1 - Dance enquanto a musica tocar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;,  se o mestre olhar para você. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Preste atenção e se diverta!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;1 - Dance enquanto a musica tocar&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;2 - Fique parado ao ouvir &amp;quot;estátua&amp;quot; de nossa rainha&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;3 - Abaixe-se quando ouvir &amp;quot;morreu&amp;quot;, se o mestre olhar&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; para você. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Preste atenção e se diverta!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -1047,10 +807,10 @@
        <widget class="QFrame" name="frame_17">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>351</width>
-          <height>361</height>
+          <x>0</x>
+          <y>0</y>
+          <width>391</width>
+          <height>421</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -1072,7 +832,7 @@
             <item>
              <widget class="QLabel" name="jogadorGanhador">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;O Jogador 1 ganhou!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;O Jogador X ganhou!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
