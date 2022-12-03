@@ -10,8 +10,8 @@ def posicionamento_mortoVivo(ser, eMorto=False):
     if recebeDados[0]=="0" or recebeDados[0]=="1":
         distancia1 = int(recebeDados[4:7])
     elif recebeDados == '':
-        self.ser.write(('d').encode('ascii'))
-        self.ser.write(('L').encode('ascii'))
+        ser.write(('d').encode('ascii'))
+        ser.write(('L').encode('ascii'))
     else:
         distancia1 = int(recebeDados[5:8])
     print(recebeDados)
@@ -20,8 +20,8 @@ def posicionamento_mortoVivo(ser, eMorto=False):
     if recebeDados[0]=="0" or recebeDados[0]=="1":
         distancia2 = int(recebeDados[4:7])
     elif recebeDados == '':
-        self.ser.write(('d').encode('ascii'))
-        self.ser.write(('L').encode('ascii'))
+        ser.write(('d').encode('ascii'))
+        ser.write(('L').encode('ascii'))
     else:
         distancia2 = int(recebeDados[5:8])
     print(recebeDados)
