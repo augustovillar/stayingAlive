@@ -117,10 +117,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.logger.info(f"Jogador 1, {jogador1Nome}, foi cadastrado com sucesso.")
         elif jogador1OK=="JA":
             print(f"O Jogador1, {jogador1Nome}, já está cadastrado.")
-            self.logger.info(f"Jogador 1, {jogador1Nome}, já está cadastrado.")
+            self.logger.info(f"Jogador 1, {jogador1Nome}, ja esta cadastrado.")
         else:
             print(f"O Jogador1, {jogador1Nome}, não foi cadastrado com sucesso.")
-            self.logger.error(f"Jogador 1, {jogador1Nome}, não foi cadastrado com sucesso.")
+            self.logger.error(f"Jogador 1, {jogador1Nome}, nao foi cadastrado com sucesso.")
             dialog = QMessageBox(parent=self, text="O jogador 1 não foi cadastrado com sucesso!")
             dialog.setWindowTitle("Erro no cadastro")
             dialog.exec()
@@ -138,10 +138,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.logger.info(f"Jogador 2, {jogador2Nome}, foi cadastrado com sucesso.")
         elif jogador2OK=="JA":
             print(f"O Jogador 2, {jogador2Nome}, já está cadastrado.")
-            self.logger.info(f"Jogador 2, {jogador2Nome}, já está cadastrado.")
+            self.logger.info(f"Jogador 2, {jogador2Nome}, ja esta cadastrado.")
         else:
             print(f"O Jogador2, {jogador2Nome}, não foi cadastrado com sucesso.")
-            self.logger.error(f"Jogador 2, {jogador2Nome}, não foi cadastrado com sucesso.")
+            self.logger.error(f"Jogador 2, {jogador2Nome}, nao foi cadastrado com sucesso.")
             dialog = QMessageBox(parent=self, text="O jogador 2 não foi cadastrado com sucesso!")
             dialog.setWindowTitle("Erro no cadastro")
             dialog.exec()
@@ -155,7 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             dialog.exec()
         else:
             dialog = QMessageBox(parent=self, text='Usuários não foram cadastrados!')
-            self.logger.error(f"Cadastro não realizado.")
+            self.logger.error(f"Cadastro nao realizado.")
             dialog.setWindowTitle("Cadastro")
             dialog.exec()
             return
@@ -227,7 +227,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             timeNow = time.time()
 
         print('Posicionamento do jogador '+str(numJogador)+' não foi feita com sucesso!')
-        self.logger.warning(f"Posicionamento do jogador {str(numJogador)} não foi feita com sucesso.")
+        self.logger.warning(f"Posicionamento do jogador {str(numJogador)} nao foi feita com sucesso.")
         return 'TIMEOUT'
 
     def posicionamento_modo1(self):
@@ -475,8 +475,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         jogadorNome = self.nomeJogador.text().strip()
 
         if jogadorNome=="":
-            dialog = QMessageBox(parent=self, text="Por favor, insira um nome válido.")
-            self.logger.warning(f"Nome invalido para buscar no histório.")
+            dialog = QMessageBox(parent=self, text="Por favor, insira um nome valido.")
+            self.logger.warning(f"Nome invalido para buscar no historio.")
             dialog.setWindowTitle("Erro na busca")
             dialog.exec()
             self.Pages.setCurrentWidget(self.procuraCadastro)
@@ -490,7 +490,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             id_jogador = db.verifica_usuario(jogadorNome)[0][0]
         except:
             dialog = QMessageBox(parent=self, text="Jogador não encontrado")
-            self.logger.warning(f"Jogador não encontrado.")
+            self.logger.warning(f"Jogador nao encontrado.")
             dialog.setWindowTitle("Erro na busca")
             dialog.exec()
             self.Pages.setCurrentWidget(self.procuraCadastro)
